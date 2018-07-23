@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Fri Jul 20 09:48:53 2018
+| Date         : Mon Jul 23 12:07:52 2018
 | Host         : DESKTOP-EPHBFNF running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file boost_control_sets_placed.rpt
 | Design       : boost
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    15 |
-| Unused register locations in slices containing registers |    75 |
+| Number of unique control sets                            |    17 |
+| Unused register locations in slices containing registers |    90 |
 +----------------------------------------------------------+-------+
 
 
@@ -35,8 +35,9 @@ Table of Contents
 | Fanout | Control Sets |
 +--------+--------------+
 |      1 |            3 |
+|      2 |            1 |
 |      9 |            1 |
-|     10 |            2 |
+|     10 |            3 |
 |     11 |            1 |
 |     12 |            1 |
 |    16+ |            7 |
@@ -49,12 +50,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             815 |          202 |
-| No           | No                    | Yes                    |             182 |           61 |
-| No           | Yes                   | No                     |             109 |           36 |
+| No           | No                    | No                     |             815 |          201 |
+| No           | No                    | Yes                    |             201 |           66 |
+| No           | Yes                   | No                     |             111 |           37 |
 | Yes          | No                    | No                     |              11 |            4 |
-| Yes          | No                    | Yes                    |              43 |            9 |
-| Yes          | Yes                   | No                     |              21 |            7 |
+| Yes          | No                    | Yes                    |              53 |           16 |
+| Yes          | Yes                   | No                     |              23 |            9 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -67,18 +68,20 @@ Table of Contents
 |  inst0/inst/clk_out1 | cpu_inst/sw_on_i_1_n_0         | debounce_inst2/reset                |                1 |              1 |
 |  inst0/inst/clk_out1 | acd_inst/adc/n_cnv             | debounce_inst2/reset                |                1 |              1 |
 |  inst0/inst/clk_out1 | acd_inst/control/E[0]          |                                     |                1 |              1 |
+|  inst0/inst/clk_out1 | cpu_inst/cntr_load_i_1_n_0     | debounce_inst2/reset                |                1 |              2 |
 |  inst0/inst/clk_out1 | acd_inst/control/control_done  | debounce_inst2/reset                |                3 |              9 |
-|  inst0/inst/clk_out1 |                                | cpu_inst/cntr_load_reg_n_0          |                3 |             10 |
-|  inst0/inst/clk_out1 | acd_inst/adc/adc_done          | debounce_inst2/reset                |                2 |             10 |
-|  inst0/inst/clk_out1 | acd_inst/control/wr_i_en       | debounce_inst2/reset                |                4 |             11 |
+|  inst0/inst/clk_out1 |                                | cpu_inst/SINIT                      |                3 |             10 |
+|  inst0/inst/clk_out1 | acd_inst/adc/adc_done          | debounce_inst2/reset                |                3 |             10 |
+|  inst0/inst/clk_out1 | acd_inst/control/n_kp          | debounce_inst2/reset                |                4 |             10 |
+|  inst0/inst/clk_out1 | acd_inst/control/wr_i_en       | debounce_inst2/reset                |                6 |             11 |
 |  inst0/inst/clk_out1 | acd_inst/adc/sync/fdata_reg[8] |                                     |                4 |             12 |
-|  inst0/inst/clk_out1 |                                | debounce_inst1/PB_idle              |                7 |             25 |
+|  inst0/inst/clk_out1 |                                | debounce_inst1/PB_cnt[0]_i_1_n_0    |                7 |             25 |
 |  inst0/inst/clk_out1 |                                | debounce_inst2/PB_cnt[0]_i_1__0_n_0 |                7 |             25 |
 |  inst0/inst/clk_out1 |                                | debounce_inst3/PB_cnt[0]_i_1__1_n_0 |                7 |             25 |
-|  pipe_clk_BUFG       | acd_inst/control/s2s3_wr_i_en  | debounce_inst2/reset                |                5 |             32 |
-|  inst0/inst/clk_out1 |                                | debounce_inst2/reset                |               24 |             46 |
-|  pipe_clk_BUFG       |                                | debounce_inst2/reset                |               49 |            160 |
-|  inst0/inst/clk_out1 |                                |                                     |              204 |            819 |
+|  pipe_clk_BUFG       | acd_inst/control/s2s3_wr_i_en  | debounce_inst2/reset                |                6 |             32 |
+|  inst0/inst/clk_out1 |                                | debounce_inst2/reset                |               38 |             67 |
+|  pipe_clk_BUFG       |                                | debounce_inst2/reset                |               41 |            160 |
+|  inst0/inst/clk_out1 |                                |                                     |              203 |            819 |
 +----------------------+--------------------------------+-------------------------------------+------------------+----------------+
 
 

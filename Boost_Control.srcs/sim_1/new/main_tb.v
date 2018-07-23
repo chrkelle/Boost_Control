@@ -31,7 +31,13 @@ module main_tb();
     wire sw_on, FF_preset_bar, FF_clear_bar, exp_flg_bar;
     wire clk, ctrl_ready_flg;
     wire step_up;
-
+    wire [15:0] ADC_out;
+    wire ctrl_start;
+    wire [31:0] i_out;
+    wire signed [15:0] ADC_ref;
+    wire signed [15:0] ADC_error;
+    wire test;
+    
     integer i = 0;
     
     boost inst0(.sys_clk_p(sys_clk_p), .sys_clk_n(sys_clk_n),
@@ -45,7 +51,7 @@ module main_tb();
                .tp(tp), .tl(tl), .sw_on(sw_on),
                .FF_preset_bar(FF_preset_bar), .FF_clear_bar(FF_clear_bar),
                .exp_flg_bar(exp_flg_bar), .clk(clk),
-               .ctrl_ready_flg(ctrl_ready_flg), .step_up(step_up));
+               .ctrl_ready_flg(ctrl_ready_flg), .step_up(step_up), .ctrl_start(ctrl_start), .test(test));
 
     always begin
         #2.5
@@ -65,13 +71,13 @@ module main_tb();
         sys_clk_n = 0;
         reset_in = 1;
         startup_in = 1;
-        step_up_in = 1;
+        step_up_in = 0;
         comp_edge = 0;
         sat_flg = 0;
-        da_p = 0;
-        da_n = 1;
-        db_p = 0;
-        db_n = 1;
+        da_p = 1;
+        da_n = 0;
+        db_p = 1;
+        db_n = 0;
         
         for(i = 0; i < 2000; i = i + 1) begin
             @(negedge clk);
@@ -84,6 +90,7 @@ module main_tb();
         end
         
         comp_edge = 1;
+        step_up_in = 1;
         
         for(i = 0; i < 50; i = i + 1) begin
             @(negedge clk);

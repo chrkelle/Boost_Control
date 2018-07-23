@@ -1,0 +1,23 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../Boost_Control.srcs/sources_1/ip/clk_wiz_0" \
+"../../../../Boost_Control.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
+"../../../../Boost_Control.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
+"../../../../Boost_Control.srcs/sources_1/new/ACD.v" \
+"../../../../Boost_Control.srcs/sources_1/new/ADC_v5.v" \
+"../../../../Boost_Control.srcs/sources_1/new/DAC.v" \
+"../../../../Boost_Control.srcs/sources_1/new/controller.v" \
+"../../../../Boost_Control.srcs/sources_1/new/cpu.v" \
+"../../../../Boost_Control.srcs/sources_1/new/debounce.v" \
+"../../../../Boost_Control.srcs/sources_1/new/stage0.v" \
+"../../../../Boost_Control.srcs/sources_1/new/stage1.v" \
+"../../../../Boost_Control.srcs/sources_1/new/stage2.v" \
+"../../../../Boost_Control.srcs/sources_1/new/stage3.v" \
+"../../../../Boost_Control.srcs/sources_1/new/sync_dout.v" \
+"../../../../Boost_Control.srcs/sources_1/new/sync_reg.v" \
+"../../../../Boost_Control.srcs/sources_1/new/main.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

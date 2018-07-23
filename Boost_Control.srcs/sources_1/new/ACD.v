@@ -58,6 +58,7 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     assign done = dac_done;
     assign start_adc = (start & ~cold_start_p) || ctrl_start;
     assign cnv_n = 0;
+   
     
     //buffers
     

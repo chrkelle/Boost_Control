@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module cpu# (localparam adc_delay = 30,off_time = 90,sw_on_delay= 160,clear_delay = 165, preset_delay = 4)
+module cpu# (localparam adc_delay = 86,off_time = 126,sw_on_delay= 196,clear_delay = 201, preset_delay = 4)
 (
 input wire clk,rst,
 input wire comp_edge, sat_flg,
@@ -32,7 +32,9 @@ output wire FF_clear_bar,
 output wire exp_flg_bar,
 
 output reg sw_on,
-output reg ctrl_start
+output reg ctrl_start,
+output wire test,
+output reg cntr_load
 
 // for test
 //output wire [9:0] counter,
@@ -49,11 +51,13 @@ s2=10'b0000000010,  // start controller
 s3=10'b0000000100,  // on timmer
 s4=10'b0000001000,  // switch off delay
 s5=10'b0000010000,  // FF clear
-s6=10'b0000100000;  // valley current detection
+s6=10'b0000100000,  // valley current detection
+s7=10'b0001000000,
+s8=10'b0010000000,
+s9=10'b0100000000;
 
 
 wire [9:0] counter;
-reg cntr_load;
 reg ctrl_ready_detect;
 reg [2:0]ctrl_start_reg;
 //reg [7:0]FF_clear_reg;
@@ -69,6 +73,7 @@ on_time_counter on_time_counter_inst (
 assign FF_preset_bar = ~FF_preset;
 assign FF_clear_bar = ~FF_clear;
 assign exp_flg_bar = ~exp_flg;
+assign test = (state == 10'b0000010000);
 
    always@(posedge clk) begin
         comp_edge_p <= comp_edge;
@@ -95,10 +100,10 @@ assign exp_flg_bar = ~exp_flg;
          else 
              state <= s0;
          
-         if (startup==1)
-              cntr_load <= 1'b0; 
-         else 
-             cntr_load  <= 1'b1;       
+         //if (startup==1)
+         //     cntr_load <= 1'b0; 
+         //else 
+         //    cntr_load  <= 1'b1;       
          
          sw_on              <= 1'b0;
          FF_clear           <= 1'b1;
@@ -109,22 +114,34 @@ assign exp_flg_bar = ~exp_flg;
          exp_flg            <= 1'b0;
     end
     
+    s1: begin
+        state <= s2;
+    end
     
-    s1: begin                    //adc sampling delay
+    s2: begin
+        cntr_load <= 0;
+        state <= s3;
+    end
+    
+    s3: begin
+        state <= s4;
+    end
+    
+    s4: begin                    //adc sampling delay
         if (counter >= adc_delay)             
-            state <= s2;
+            state <= s5;
         else
-            state <= s1;
+            state <= s4;
             
         ctrl_start_reg <= 3'b110;         
      end
      
      
-     s2: begin                  // SW OFF LIMITED BY CONTROL TIME, START CONTROL
+     s5: begin                  // SW OFF LIMITED BY CONTROL TIME, START CONTROL
         if (counter >= off_time)           
-            state <= s3;
+            state <= s6;
         else
-          state <= s2; 
+          state <= s5; 
           
           //  2 clk period width pulse  
           ctrl_start <= ctrl_start_reg[2];
@@ -138,11 +155,11 @@ assign exp_flg_bar = ~exp_flg;
       end
 
 
-      s3 : begin   // switch-on constant min, lift clear on dout
+      s6 : begin   // switch-on constant min, lift clear on dout
         if (counter >= sw_on_delay)
-            state<=s4;            
+            state<=s7;            
         else          
-            state<=s3;
+            state<=s6;
                                 
         sw_on <= 1'b1;
         if (ctrl_ready_flg & ~ctrl_ready_flg_p)
@@ -151,37 +168,37 @@ assign exp_flg_bar = ~exp_flg;
             ctrl_ready_detect <= 1'b0;  
       end
       
-      s4: begin //clear low
+      s7: begin //clear low
        if(counter >= clear_delay)
-        state<=s5;
+        state<=s8;
        else
-        state<=s4;
+        state<=s7;
         
         FF_clear <= 1'b0;		
 
       end
       
       
-      s5 : begin   // saturation detection    
+      s8 : begin   // saturation detection    
 
             if (ctrl_ready_detect == 1'b1) 
                 exp_flg <= 1'b0;  
             
             if (sat_flg == 1'b0) //if SP < DACS keep switch on
-                state <= s6;
+                state <= s9;
             else begin
                 state <= s0;     //if SP > DACS turn off switch
                 cntr_load <= 1'b1;
             end
       end
       
-      s6 : begin   // peak current detection
+      s9 : begin   // peak current detection
         if (comp_edge || sat_flg) begin
             state <= s0;
             cntr_load <= 1'b1; 
         end
         else
-            state <= s6;  
+            state <= s9;  
         end   
         
  

@@ -104,6 +104,14 @@ set_property IOSTANDARD LVCMOS33 [get_ports {sw_on}]
 set_property PACKAGE_PIN D16 [get_ports {comp_edge}]
 set_property IOSTANDARD LVCMOS33 [get_ports {comp_edge}]
 
+# MC2-10 
+set_property PACKAGE_PIN J16 [get_ports {ctrl_start}]
+set_property IOSTANDARD LVCMOS25 [get_ports {ctrl_start}]
+
+# MC2-15 
+set_property PACKAGE_PIN N18 [get_ports {test}]
+set_property IOSTANDARD LVCMOS25 [get_ports {test}]
+
 # MC2-17 
 set_property PACKAGE_PIN N19 [get_ports {reset_in}]
 set_property IOSTANDARD LVCMOS25 [get_ports {reset_in}]
@@ -131,6 +139,10 @@ set_property IOSTANDARD LVCMOS25 [get_ports {cnv_n}]
 # MC2-27 
 set_property PACKAGE_PIN M21 [get_ports {tl}]
 set_property IOSTANDARD LVCMOS25 [get_ports {tl}]
+
+# MC2-29 
+set_property PACKAGE_PIN L21 [get_ports {cntr_load}]
+set_property IOSTANDARD LVCMOS25 [get_ports {cntr_load}]
 
 # MC2-31 
 set_property PACKAGE_PIN L19 [get_ports {aclk_p}]
