@@ -24,7 +24,7 @@ module boost(sys_clk_p, sys_clk_n, reset_in, startup_in, step_up_in, dacclk, ctr
 hi_muxsel, comp_edge, sat_flg, sw_on, FF_preset_bar, FF_clear_bar, exp_flg_bar,
 dco_p, dco_n, da_p, da_n, db_p, db_n,
 aclk_p, aclk_n, cnv_p, cnv_n, tp, tl,
-ctrl_ready_flg, clk, step_up, ctrl_start, test, cntr_load);
+ctrl_ready_flg, clk, step_up, ctrl_start);
 
     input wire sys_clk_p, sys_clk_n;
     input wire reset_in, startup_in, step_up_in;
@@ -57,7 +57,6 @@ ctrl_ready_flg, clk, step_up, ctrl_start, test, cntr_load);
 
 //*************************    
     output wire ctrl_start;
-    output wire test, cntr_load;
     wire clk_in;
     wire reset, startup;
     wire dout;
@@ -76,7 +75,7 @@ ctrl_ready_flg, clk, step_up, ctrl_start, test, cntr_load);
     sync_dout  sync_inst0(.clk(clk), .sync_in_dout(comp_edge), .sync_out_doutp2(dout));
     
     
-    cpu cpu_inst (.clk(clk),.rst(reset),
+    cpu_v3 cpu_inst (.clk(clk),.rst(reset),
                     .startup(startup),
                     .comp_edge(dout),
                     .sat_flg(sat_flg),
@@ -85,12 +84,11 @@ ctrl_ready_flg, clk, step_up, ctrl_start, test, cntr_load);
                     .ctrl_start(ctrl_start),
                     .FF_preset_bar(FF_preset_bar),
                     .FF_clear_bar(FF_clear_bar),   
-                    .exp_flg_bar(exp_flg_bar),
+                    .exp_flg_bar(exp_flg_bar)
 //                    .counter(counter),
 //                    .cntr_load(cntr_load),
 //                    .state(state)
-                    .test(test),
-                    .cntr_load(cntr_load));
+                     );
 
     ACD acd_inst(.clk(clk), .reset(reset), .start(startup), .step_up(step_up), .ctrl_start(ctrl_start), .dco_p(dco_p), .dco_n(dco_n)
     ,.da_p(da_p), .da_n(da_n), .db_p(db_p), .db_n(db_n),.aclk_p(aclk_p), .aclk_n(aclk_n), 

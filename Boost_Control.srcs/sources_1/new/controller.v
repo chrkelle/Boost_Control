@@ -259,13 +259,13 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
         case(step_up_state)
             0: begin    //30
                 if(step_up) begin
-                    n_step_up_state = 1;
+                    n_step_up_state = 2;
                     n_step_count = 0;
                 end
             end
             1: begin    //35
-                n_ki = 350;
-                n_kp = 35000;
+                n_ki = 250;
+                n_kp = 25000;
                 n_ADC_ref = 177;
                 if(step_count >= 2000) begin
                     n_step_up_state = 2;
@@ -273,11 +273,11 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
                 end
             end
             2: begin //40
-                n_ki = 350;
-                n_kp = 35000;
-                n_ADC_ref = 202;
+                n_ki = 250;
+                n_kp = 17500;
+                n_ADC_ref = 187;
                 if(step_count >= 2000) begin
-                    n_step_up_state = 3;
+                    n_step_up_state = 2;
                     n_step_count = 0;
                 end
             end

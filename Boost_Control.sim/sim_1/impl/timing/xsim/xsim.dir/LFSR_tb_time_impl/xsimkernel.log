@@ -1,0 +1,4 @@
+Running: xsim.dir/LFSR_tb_time_impl/xsimk.exe -simmode gui -wdb LFSR_tb_time_impl.wdb -simrunnum 0 -socket 62892
+Design successfully loaded
+Design Loading Memory Usage: 6160 KB (Peak: 6160 KB)
+Design Loading CPU Usage: 46 ms
