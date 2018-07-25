@@ -27,14 +27,20 @@ module step_ctrl(clk, reset, step_up, ki, kp, ADC_ref);
     output reg signed [15:0] ADC_ref;
     
     reg        [2:0] state, n_state;
-    reg        [15:0] count, n_count;
+    wire       [15:0] count;
+    reg               SINIT, n_SINIT;
     reg signed [31:0] n_ki, n_kp;
     reg signed [15:0] n_ADC_ref;
     
+    step_counter your_instance_name (
+      .CLK(clk),      // input wire CLK
+      .SINIT(SINIT),  // input wire SINIT
+      .Q(count)       // output wire [15 : 0] Q
+    );
     
     always@* begin
         n_state   = state;
-        n_count   = count + 1;
+        n_SINIT   = SINIT;
         n_ki      = ki;
         n_kp      = kp;
         n_ADC_ref = ADC_ref;
@@ -43,38 +49,45 @@ module step_ctrl(clk, reset, step_up, ki, kp, ADC_ref);
             0: begin
                 if(step_up)
                     n_state = 1;
+                    n_SINIT = 1;
             end
-            1: begin //25V
-                n_ki      = 10;
-                n_kp      = 10;
+            1: begin
+                n_state = 2;
+                n_SINIT = 0;
+            end
+            
+            2: begin
+                n_state = 3;
+            end
+            
+            3: begin //20 - 25V
+                n_ki      = 50;
+                n_kp      = 2800;
                 n_ADC_ref = 506;
-                if(count >= 6000) begin
-                    n_state = 2;
-                    n_count = 0;
-                end
-            end
-            2: begin //30V
-                n_ki      = 20;
-                n_kp      = 20;
-                n_ADC_ref = 607;
-                if(count >= 6000) begin
-                    n_state = 3;
-                    n_count = 0;
-                end
-            end
-            3: begin //35V
-                n_ki      = 318;
-                n_kp      = 5250;
-                n_ADC_ref = 709;
-                if(count >= 6000) begin
+                if(count >= 16000) begin
                     n_state = 4;
-                    n_count = 0;
                 end
             end
-            4: begin //40V
-                n_ki      = 53;
-                n_kp      = 2625;
-                n_ADC_ref = 810;
+            4: begin //25 - 30V
+                n_ki      = 120;
+                n_kp      = 3300;
+                n_ADC_ref = 607;
+                if(count >= 32000) begin
+                    n_state = 5;
+                end
+            end
+            5: begin //30 - 35V
+                n_ki      = 230;
+                n_kp      = 4800;
+                n_ADC_ref = 708;
+                if(count >= 48000) begin
+                    n_state = 6;
+                end
+            end
+            6: begin //35 - 40V
+                n_ki      = 115;
+                n_kp      = 3300;
+                n_ADC_ref = 820;
             end
         endcase
     end
@@ -82,14 +95,14 @@ module step_ctrl(clk, reset, step_up, ki, kp, ADC_ref);
     always @(posedge clk) begin
         if(reset) begin
             state   <= 0;
-            count   <= 0;
-            ki      <= 100;
+            SINIT   <= 0;
+            ki      <= 10;
             kp      <= 0;
             ADC_ref <= 405;
         end
         else begin
             state   <= n_state;
-            count   <= n_count;
+            SINIT   <= n_SINIT;
             ki      <= n_ki;
             kp      <= n_kp;
             ADC_ref <= n_ADC_ref;

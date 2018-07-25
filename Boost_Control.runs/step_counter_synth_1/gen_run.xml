@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="step_counter_synth_1" LaunchPart="xc7a50tfgg484-3" LaunchTime="1532539957">
+  <File Type="PA-TCL" Name="step_counter.tcl"/>
+  <File Type="REPORTS-TCL" Name="step_counter_reports.tcl"/>
+  <File Type="RDS-RDS" Name="step_counter.vds"/>
+  <File Type="RDS-UTIL" Name="step_counter_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="step_counter_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="step_counter.dcp"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/step_counter">
+    <File Path="$PSRCDIR/sources_1/ip/step_counter/step_counter.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="step_counter"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/step_counter">
+    <File Path="$PSRCDIR/sources_1/ip/step_counter/step_counter.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="step_counter"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

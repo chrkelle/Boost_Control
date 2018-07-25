@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../Boost_Control.srcs/sources_1/ip/step_counter/sim/step_counter.vhd" \
+
+nosort

@@ -22,7 +22,7 @@
 
 module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n, 
            da_p, da_n, db_p, db_n, aclk_p, aclk_n, cnv_p, cnv_n, 
-           tp, tl, dacclk, ctrl_2_dac, done, ADC_ref, ki, kp);
+           tp, tl, dacclk, ctrl_2_dac, done);
     
     //system inputs
     input wire clk, reset, start, step_up, ctrl_start;
@@ -31,8 +31,8 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     reg cold_start, cold_start_p;
     //controller inputs
     reg [15:0] adc_2_ctrl;
-    output wire signed [31:0] ki, kp;
-    output wire signed [15:0] ADC_ref;
+    wire signed [31:0] ki, kp;
+    wire signed [15:0] ADC_ref;
     //dac inputs
     
     //system outputs
@@ -61,6 +61,7 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     assign start_adc = (start & ~cold_start_p) || ctrl_start;
     assign cnv_n = 0;
    
+    wire signed [15:0] ADC_ref;
     
     //buffers
     

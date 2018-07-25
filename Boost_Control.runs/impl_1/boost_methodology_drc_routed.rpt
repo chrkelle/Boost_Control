@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Wed Jul 25 09:08:16 2018
+| Date         : Wed Jul 25 16:55:24 2018
 | Host         : DESKTOP-EPHBFNF running 64-bit major release  (build 9200)
 | Command      : report_methodology -file boost_methodology_drc_routed.rpt -pb boost_methodology_drc_routed.pb -rpx boost_methodology_drc_routed.rpx
 | Design       : boost
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 197
+             Violations found: 195
 +-----------+----------+----------------------------------+------------+
 | Rule      | Severity | Description                      | Violations |
 +-----------+----------+----------------------------------+------------+
 | TIMING-2  | Warning  | Invalid primary clock source pin | 1          |
-| TIMING-17 | Warning  | Non-clocked sequential cell      | 196        |
+| TIMING-17 | Warning  | Non-clocked sequential cell      | 194        |
 +-----------+----------+----------------------------------+------------+
 
 2. REPORT DETAILS
@@ -855,165 +855,155 @@ Related violations: <none>
 
 TIMING-17#164 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[0]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#165 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[10]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#166 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[11]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#167 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[12]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#168 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[13]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#169 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[14]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#170 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[15]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#171 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[16]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#172 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[17]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#173 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[18]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#174 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[19]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#175 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[1]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#176 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[20]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#177 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[21]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#178 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[22]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[24]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#179 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[23]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[25]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#180 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[24]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[26]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#181 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[25]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[27]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#182 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[26]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[28]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#183 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[27]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[29]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#184 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[28]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#185 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[29]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[30]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#186 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[2]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[31]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#187 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[30]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#188 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[31]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#189 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[3]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#190 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[4]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#191 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[5]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#192 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[6]/C is not reached by a timing clock
+The clock pin acd_inst/control/s2s3_prop_e_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#193 Warning
 Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[7]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#194 Warning
-Non-clocked sequential cell  
-The clock pin acd_inst/control/s2s3_prop_e_reg[8]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#195 Warning
-Non-clocked sequential cell  
 The clock pin acd_inst/control/s2s3_prop_e_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#196 Warning
+TIMING-17#194 Warning
 Non-clocked sequential cell  
 The clock pin acd_inst/control/s2s3_wr_i_en_reg/C is not reached by a timing clock
 Related violations: <none>

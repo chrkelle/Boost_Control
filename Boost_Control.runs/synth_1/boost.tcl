@@ -16,7 +16,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a50tfgg484-3
 
 set_param project.singleFileAddWarning.threshold 0
@@ -65,6 +64,9 @@ read_ip -quiet C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/
 set_property used_in_implementation false [get_files -all c:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+
+read_ip -quiet C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/ip/step_counter/step_counter.xci
+set_property used_in_implementation false [get_files -all c:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/ip/step_counter/step_counter_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

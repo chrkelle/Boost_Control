@@ -38,6 +38,7 @@ module main_tb();
     wire signed [15:0] ADC_error;
     wire test;
     wire signed [31:0] ki, kp;
+    wire [15:0] count;
     
     integer i = 0;
     
@@ -52,7 +53,7 @@ module main_tb();
                .tp(tp), .tl(tl), .sw_on(sw_on),
                .FF_preset_bar(FF_preset_bar), .FF_clear_bar(FF_clear_bar),
                .exp_flg_bar(exp_flg_bar), .clk(clk),
-               .ctrl_ready_flg(ctrl_ready_flg), .step_up(step_up), .ctrl_start(ctrl_start), .ki(ki), .ADC_ref(ADC_ref));
+               .ctrl_ready_flg(ctrl_ready_flg), .step_up(step_up), .ctrl_start(ctrl_start), .count(count), .ADC_ref(ADC_ref));
 
     always begin
         #2.5
