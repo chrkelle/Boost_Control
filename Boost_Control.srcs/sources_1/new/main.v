@@ -24,7 +24,7 @@ module boost(sys_clk_p, sys_clk_n, reset_in, startup_in, step_up_in, dacclk, ctr
 hi_muxsel, comp_edge, sat_flg, sw_on, FF_preset_bar, FF_clear_bar, exp_flg_bar,
 dco_p, dco_n, da_p, da_n, db_p, db_n,
 aclk_p, aclk_n, cnv_p, cnv_n, tp, tl,
-ctrl_ready_flg, clk, step_up, ctrl_start);
+ctrl_ready_flg, clk, step_up, ctrl_start, ki, ADC_ref);
 
     input wire sys_clk_p, sys_clk_n;
     input wire reset_in, startup_in, step_up_in;
@@ -61,6 +61,10 @@ ctrl_ready_flg, clk, step_up, ctrl_start);
     wire reset, startup;
     wire dout;
     
+    wire signed [31:0] kp;
+    output wire signed [31:0] ki;
+    output wire signed [15:0] ADC_ref;
+    
     assign hi_muxsel = 0;
     
     IBUFDS #(.DIFF_TERM("FALSE"), .IBUF_LOW_PWR("FALSE"), .IOSTANDARD("LVDS_25")) 
@@ -93,7 +97,7 @@ ctrl_ready_flg, clk, step_up, ctrl_start);
     ACD acd_inst(.clk(clk), .reset(reset), .start(startup), .step_up(step_up), .ctrl_start(ctrl_start), .dco_p(dco_p), .dco_n(dco_n)
     ,.da_p(da_p), .da_n(da_n), .db_p(db_p), .db_n(db_n),.aclk_p(aclk_p), .aclk_n(aclk_n), 
     .cnv_p(cnv_p), .cnv_n(cnv_n), .tp(tp), .tl(tl), .ctrl_2_dac(ctrl_2_dac), .dacclk(dacclk), 
-    .done(ctrl_ready_flg));   
+    .done(ctrl_ready_flg), .ADC_ref(ADC_ref), .kp(kp), .ki(ki));   
     
 
     

@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module cpu_v3# (localparam adc_delay = 30,off_time = 80,sw_on_delay= 120,clear_delay = 125, preset_delay = 4)
+module cpu_v3# (localparam adc_delay = 30,off_time = 80,sw_on_delay= 130,clear_delay = 135, preset_delay = 4)
 (
 input wire clk,rst,
 input wire comp_edge, sat_flg,

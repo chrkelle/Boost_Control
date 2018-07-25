@@ -58,7 +58,7 @@ module preset(  input  wire sys_clk_p,
     OBUFDS_inst0(.O(aclk_p), .OB(aclk_n), .I(aclk));
     clk_wiz_0 inst0(.clk_out1(clk), .clk_in1(clk_in)); 
     
-    ADC_v5 adc(.clk(clk), .reset(reset), .dco(dco), .da(da),. db(db), .start(start_adc),
+    ADC_v6 adc(.clk(clk), .reset(reset), .dco(dco), .da(da),. db(db), .start(start_adc),
                .aclk(aclk), .cnv(cnv_p), .tp(tp), .tl(tl), .data(ADC_out), .adc_done(adc_done));
                 
     

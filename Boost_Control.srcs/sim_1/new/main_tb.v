@@ -37,6 +37,7 @@ module main_tb();
     wire signed [15:0] ADC_ref;
     wire signed [15:0] ADC_error;
     wire test;
+    wire signed [31:0] ki, kp;
     
     integer i = 0;
     
@@ -51,7 +52,7 @@ module main_tb();
                .tp(tp), .tl(tl), .sw_on(sw_on),
                .FF_preset_bar(FF_preset_bar), .FF_clear_bar(FF_clear_bar),
                .exp_flg_bar(exp_flg_bar), .clk(clk),
-               .ctrl_ready_flg(ctrl_ready_flg), .step_up(step_up), .ctrl_start(ctrl_start), .test(test));
+               .ctrl_ready_flg(ctrl_ready_flg), .step_up(step_up), .ctrl_start(ctrl_start), .ki(ki), .ADC_ref(ADC_ref));
 
     always begin
         #2.5
@@ -84,13 +85,13 @@ module main_tb();
         end
         
         reset_in = 0;
+        step_up_in = 1;
         
         for(i = 0; i < 2000; i = i + 1) begin
             @(negedge clk);
         end
         
         comp_edge = 1;
-        step_up_in = 1;
         
         for(i = 0; i < 50; i = i + 1) begin
             @(negedge clk);

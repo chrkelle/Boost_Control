@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log preset_LFSR.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source preset_LFSR.tcl
+EAStep vivado -log boost.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source boost.tcl

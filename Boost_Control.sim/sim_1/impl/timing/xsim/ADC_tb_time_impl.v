@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-// Date        : Mon Jul 23 09:45:27 2018
+// Date        : Tue Jul 24 13:46:42 2018
 // Host        : DESKTOP-EPHBFNF running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode timesim -nolib -sdf_anno true -force -file
 //               C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.sim/sim_1/impl/timing/xsim/ADC_tb_time_impl.v
@@ -13,7 +13,7 @@
 `timescale 1 ps / 1 ps
 `define XIL_TIMING
 
-module ADC_v5
+module ADC_v6
    (cnv,
     ADC_out_OBUF,
     adc_done_OBUF,
@@ -29,9 +29,11 @@ module ADC_v5
     lopt_2,
     lopt_3,
     lopt_4,
-    lopt_5);
+    lopt_5,
+    lopt_6,
+    lopt_7);
   output cnv;
-  output [9:0]ADC_out_OBUF;
+  output [11:0]ADC_out_OBUF;
   output adc_done_OBUF;
   output aclk;
   input [0:0]SR;
@@ -46,48 +48,49 @@ module ADC_v5
   output lopt_3;
   output lopt_4;
   output lopt_5;
+  output lopt_6;
+  output lopt_7;
 
-  wire [9:0]ADC_out_OBUF;
+  wire [11:0]ADC_out_OBUF;
   wire [0:0]D;
   wire \FSM_sequential_state[0]_i_1_n_0 ;
   wire \FSM_sequential_state[1]_i_1_n_0 ;
   wire \FSM_sequential_state[2]_i_1_n_0 ;
-  wire \FSM_sequential_state[2]_i_2_n_0 ;
   wire \FSM_sequential_state[2]_i_3_n_0 ;
   wire \FSM_sequential_state[2]_i_4_n_0 ;
   wire \FSM_sequential_state[2]_i_5_n_0 ;
   wire \FSM_sequential_state[2]_i_6_n_0 ;
+  wire \FSM_sequential_state[2]_i_7_n_0 ;
   wire [0:0]SR;
   wire aclk;
   wire aclk_i_1_n_0;
+  wire aclk_i_2_n_0;
+  wire aclk_i_3_n_0;
   wire adc_done_OBUF;
   wire adc_done_i_1_n_0;
   wire adc_done_i_2_n_0;
   wire adc_done_i_3_n_0;
-  wire adc_done_i_4_n_0;
   wire clk_out1;
   wire cnv;
   wire cnv_i_2_n_0;
   wire cnv_i_3_n_0;
-  wire \count[3]_i_2_n_0 ;
-  wire \count[3]_i_3_n_0 ;
-  wire \count[3]_i_4_n_0 ;
-  wire \count[3]_i_5_n_0 ;
   wire \count[4]_i_2_n_0 ;
   wire \count[5]_i_2_n_0 ;
   wire \count[5]_i_3_n_0 ;
-  wire \count[5]_i_4_n_0 ;
   wire \count_reg_n_0_[0] ;
   wire \count_reg_n_0_[2] ;
   wire \count_reg_n_0_[3] ;
   wire \count_reg_n_0_[4] ;
   wire \count_reg_n_0_[5] ;
-  wire \data[6]_i_1_n_0 ;
-  wire \data[7]_i_1_n_0 ;
+  wire \data[4]_i_1_n_0 ;
+  wire \data[5]_i_1_n_0 ;
+  wire \data[5]_i_2_n_0 ;
   wire \data_reg[10]_lopt_replica_1 ;
   wire \data_reg[11]_lopt_replica_1 ;
   wire \data_reg[12]_lopt_replica_1 ;
   wire \data_reg[13]_lopt_replica_1 ;
+  wire \data_reg[6]_lopt_replica_1 ;
+  wire \data_reg[7]_lopt_replica_1 ;
   wire \data_reg[8]_lopt_replica_1 ;
   wire \data_reg[9]_lopt_replica_1 ;
   wire [0:0]db_n;
@@ -96,11 +99,11 @@ module ADC_v5
   wire dcop4;
   wire n_cnv;
   wire [5:0]n_count;
-  wire p_0_in1_in;
+  wire [2:0]n_state;
+  wire p_0_in__0;
   wire start_adc_IBUF;
   (* RTL_KEEP = "yes" *) wire [2:0]state;
   wire sync_n_4;
-  wire sync_n_5;
   wire sync_out_dap2;
   wire sync_out_dbp2;
 
@@ -108,80 +111,102 @@ module ADC_v5
   assign lopt_1 = \data_reg[11]_lopt_replica_1 ;
   assign lopt_2 = \data_reg[12]_lopt_replica_1 ;
   assign lopt_3 = \data_reg[13]_lopt_replica_1 ;
-  assign lopt_4 = \data_reg[8]_lopt_replica_1 ;
-  assign lopt_5 = \data_reg[9]_lopt_replica_1 ;
-  LUT4 #(
-    .INIT(16'h07F0)) 
+  assign lopt_4 = \data_reg[6]_lopt_replica_1 ;
+  assign lopt_5 = \data_reg[7]_lopt_replica_1 ;
+  assign lopt_6 = \data_reg[8]_lopt_replica_1 ;
+  assign lopt_7 = \data_reg[9]_lopt_replica_1 ;
+  LUT6 #(
+    .INIT(64'hABAAABABA8AAA8A8)) 
     \FSM_sequential_state[0]_i_1 
-       (.I0(state[2]),
-        .I1(state[1]),
-        .I2(state[0]),
-        .I3(\FSM_sequential_state[2]_i_2_n_0 ),
+       (.I0(n_state[0]),
+        .I1(\FSM_sequential_state[2]_i_3_n_0 ),
+        .I2(\FSM_sequential_state[2]_i_4_n_0 ),
+        .I3(\FSM_sequential_state[2]_i_5_n_0 ),
+        .I4(state[2]),
+        .I5(state[0]),
         .O(\FSM_sequential_state[0]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'h06AA)) 
-    \FSM_sequential_state[1]_i_1 
+  LUT3 #(
+    .INIT(8'h07)) 
+    \FSM_sequential_state[0]_i_2 
        (.I0(state[1]),
-        .I1(state[0]),
-        .I2(state[2]),
-        .I3(\FSM_sequential_state[2]_i_2_n_0 ),
-        .O(\FSM_sequential_state[1]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'h42AA)) 
-    \FSM_sequential_state[2]_i_1 
-       (.I0(state[2]),
-        .I1(state[0]),
-        .I2(state[1]),
-        .I3(\FSM_sequential_state[2]_i_2_n_0 ),
-        .O(\FSM_sequential_state[2]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFF08)) 
-    \FSM_sequential_state[2]_i_2 
-       (.I0(\FSM_sequential_state[2]_i_3_n_0 ),
-        .I1(state[1]),
-        .I2(state[0]),
-        .I3(\FSM_sequential_state[2]_i_4_n_0 ),
-        .I4(\FSM_sequential_state[2]_i_5_n_0 ),
-        .I5(\FSM_sequential_state[2]_i_6_n_0 ),
-        .O(\FSM_sequential_state[2]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'hFF008000)) 
-    \FSM_sequential_state[2]_i_3 
-       (.I0(p_0_in1_in),
-        .I1(\count_reg_n_0_[0] ),
-        .I2(\count_reg_n_0_[2] ),
-        .I3(\count_reg_n_0_[4] ),
-        .I4(\count_reg_n_0_[3] ),
-        .O(\FSM_sequential_state[2]_i_3_n_0 ));
-  LUT5 #(
-    .INIT(32'h80808000)) 
-    \FSM_sequential_state[2]_i_4 
-       (.I0(\count_reg_n_0_[3] ),
-        .I1(\count_reg_n_0_[4] ),
-        .I2(state[0]),
-        .I3(\count_reg_n_0_[2] ),
-        .I4(p_0_in1_in),
-        .O(\FSM_sequential_state[2]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h00F2000200020002)) 
-    \FSM_sequential_state[2]_i_5 
-       (.I0(start_adc_IBUF),
         .I1(state[2]),
         .I2(state[0]),
-        .I3(state[1]),
-        .I4(\count_reg_n_0_[2] ),
-        .I5(\count_reg_n_0_[3] ),
-        .O(\FSM_sequential_state[2]_i_5_n_0 ));
+        .O(n_state[0]));
   LUT6 #(
-    .INIT(64'hFEF4FEF0FEF4FE00)) 
-    \FSM_sequential_state[2]_i_6 
+    .INIT(64'hABAAABABA8AAA8A8)) 
+    \FSM_sequential_state[1]_i_1 
+       (.I0(n_state[1]),
+        .I1(\FSM_sequential_state[2]_i_3_n_0 ),
+        .I2(\FSM_sequential_state[2]_i_4_n_0 ),
+        .I3(\FSM_sequential_state[2]_i_5_n_0 ),
+        .I4(state[2]),
+        .I5(state[1]),
+        .O(\FSM_sequential_state[1]_i_1_n_0 ));
+  LUT3 #(
+    .INIT(8'h06)) 
+    \FSM_sequential_state[1]_i_2 
        (.I0(state[1]),
         .I1(state[0]),
         .I2(state[2]),
-        .I3(\count_reg_n_0_[5] ),
-        .I4(\count_reg_n_0_[4] ),
-        .I5(\count_reg_n_0_[3] ),
+        .O(n_state[1]));
+  LUT5 #(
+    .INIT(32'hABAAA8A8)) 
+    \FSM_sequential_state[2]_i_1 
+       (.I0(n_state[2]),
+        .I1(\FSM_sequential_state[2]_i_3_n_0 ),
+        .I2(\FSM_sequential_state[2]_i_4_n_0 ),
+        .I3(\FSM_sequential_state[2]_i_5_n_0 ),
+        .I4(state[2]),
+        .O(\FSM_sequential_state[2]_i_1_n_0 ));
+  LUT3 #(
+    .INIT(8'h18)) 
+    \FSM_sequential_state[2]_i_2 
+       (.I0(state[1]),
+        .I1(state[0]),
+        .I2(state[2]),
+        .O(n_state[2]));
+  LUT6 #(
+    .INIT(64'h8888888080808080)) 
+    \FSM_sequential_state[2]_i_3 
+       (.I0(state[1]),
+        .I1(\FSM_sequential_state[2]_i_6_n_0 ),
+        .I2(\count_reg_n_0_[5] ),
+        .I3(\count_reg_n_0_[3] ),
+        .I4(\count[4]_i_2_n_0 ),
+        .I5(\count_reg_n_0_[4] ),
+        .O(\FSM_sequential_state[2]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h00000000BB883030)) 
+    \FSM_sequential_state[2]_i_4 
+       (.I0(aclk_i_3_n_0),
+        .I1(state[1]),
+        .I2(start_adc_IBUF),
+        .I3(cnv_i_3_n_0),
+        .I4(state[0]),
+        .I5(state[2]),
+        .O(\FSM_sequential_state[2]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h000001FF0000007F)) 
+    \FSM_sequential_state[2]_i_5 
+       (.I0(\count_reg_n_0_[0] ),
+        .I1(p_0_in__0),
+        .I2(\count_reg_n_0_[2] ),
+        .I3(\count_reg_n_0_[3] ),
+        .I4(\FSM_sequential_state[2]_i_7_n_0 ),
+        .I5(state[0]),
+        .O(\FSM_sequential_state[2]_i_5_n_0 ));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \FSM_sequential_state[2]_i_6 
+       (.I0(state[0]),
+        .I1(state[2]),
         .O(\FSM_sequential_state[2]_i_6_n_0 ));
+  LUT2 #(
+    .INIT(4'hE)) 
+    \FSM_sequential_state[2]_i_7 
+       (.I0(\count_reg_n_0_[5] ),
+        .I1(\count_reg_n_0_[4] ),
+        .O(\FSM_sequential_state[2]_i_7_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:000,iSTATE0:001,iSTATE1:010,iSTATE2:011,iSTATE3:100,iSTATE4:101," *) 
   (* KEEP = "yes" *) 
   FDRE #(
@@ -213,15 +238,33 @@ module ADC_v5
         .Q(state[2]),
         .R(SR));
   LUT6 #(
-    .INIT(64'hFFFFFFBF00000040)) 
+    .INIT(64'h515555550E0AA0A0)) 
     aclk_i_1
-       (.I0(adc_done_i_2_n_0),
-        .I1(\count_reg_n_0_[0] ),
+       (.I0(aclk_i_2_n_0),
+        .I1(aclk_i_3_n_0),
         .I2(state[2]),
-        .I3(state[1]),
-        .I4(state[0]),
+        .I3(state[0]),
+        .I4(state[1]),
         .I5(aclk),
         .O(aclk_i_1_n_0));
+  LUT5 #(
+    .INIT(32'h00002320)) 
+    aclk_i_2
+       (.I0(\count_reg_n_0_[0] ),
+        .I1(state[0]),
+        .I2(state[2]),
+        .I3(start_adc_IBUF),
+        .I4(state[1]),
+        .O(aclk_i_2_n_0));
+  LUT5 #(
+    .INIT(32'hFFFFE000)) 
+    aclk_i_3
+       (.I0(p_0_in__0),
+        .I1(\count_reg_n_0_[2] ),
+        .I2(\count_reg_n_0_[3] ),
+        .I3(\count_reg_n_0_[4] ),
+        .I4(\count_reg_n_0_[5] ),
+        .O(aclk_i_3_n_0));
   FDRE #(
     .INIT(1'b0)) 
     aclk_reg
@@ -230,43 +273,35 @@ module ADC_v5
         .D(aclk_i_1_n_0),
         .Q(aclk),
         .R(SR));
-  LUT6 #(
-    .INIT(64'h404040FF40404000)) 
+  LUT5 #(
+    .INIT(32'h73F34000)) 
     adc_done_i_1
        (.I0(state[1]),
-        .I1(state[2]),
-        .I2(adc_done_i_2_n_0),
+        .I1(adc_done_i_2_n_0),
+        .I2(state[2]),
         .I3(adc_done_i_3_n_0),
-        .I4(adc_done_i_4_n_0),
-        .I5(adc_done_OBUF),
+        .I4(adc_done_OBUF),
         .O(adc_done_i_1_n_0));
-  LUT3 #(
-    .INIT(8'hFE)) 
+  LUT6 #(
+    .INIT(64'h00000000CBC8C8C8)) 
     adc_done_i_2
-       (.I0(\count_reg_n_0_[5] ),
-        .I1(\count_reg_n_0_[4] ),
-        .I2(\count_reg_n_0_[3] ),
+       (.I0(cnv_i_3_n_0),
+        .I1(state[0]),
+        .I2(state[2]),
+        .I3(adc_done_OBUF),
+        .I4(p_0_in__0),
+        .I5(state[1]),
         .O(adc_done_i_2_n_0));
   LUT6 #(
-    .INIT(64'h4444444044404440)) 
+    .INIT(64'hFEFEFEFEFEFEFEFC)) 
     adc_done_i_3
-       (.I0(state[1]),
-        .I1(state[0]),
-        .I2(\count_reg_n_0_[4] ),
-        .I3(\count_reg_n_0_[5] ),
-        .I4(\count_reg_n_0_[2] ),
-        .I5(\count_reg_n_0_[3] ),
-        .O(adc_done_i_3_n_0));
-  LUT6 #(
-    .INIT(64'h0808080803000000)) 
-    adc_done_i_4
        (.I0(\count_reg_n_0_[3] ),
-        .I1(state[0]),
-        .I2(state[1]),
-        .I3(p_0_in1_in),
-        .I4(adc_done_OBUF),
-        .I5(state[2]),
-        .O(adc_done_i_4_n_0));
+        .I1(\count_reg_n_0_[5] ),
+        .I2(\count_reg_n_0_[4] ),
+        .I3(p_0_in__0),
+        .I4(\count_reg_n_0_[2] ),
+        .I5(\count_reg_n_0_[0] ),
+        .O(adc_done_i_3_n_0));
   FDRE #(
     .INIT(1'b0)) 
     adc_done_reg
@@ -276,13 +311,13 @@ module ADC_v5
         .Q(adc_done_OBUF),
         .R(SR));
   LUT5 #(
-    .INIT(32'h00000C0A)) 
+    .INIT(32'h00005140)) 
     cnv_i_1
-       (.I0(start_adc_IBUF),
-        .I1(cnv_i_3_n_0),
-        .I2(state[1]),
-        .I3(state[0]),
-        .I4(state[2]),
+       (.I0(state[2]),
+        .I1(state[0]),
+        .I2(cnv_i_3_n_0),
+        .I3(start_adc_IBUF),
+        .I4(state[1]),
         .O(n_cnv));
   LUT2 #(
     .INIT(4'h4)) 
@@ -293,10 +328,10 @@ module ADC_v5
   LUT4 #(
     .INIT(16'hFFF8)) 
     cnv_i_3
-       (.I0(\count_reg_n_0_[3] ),
-        .I1(\count_reg_n_0_[2] ),
-        .I2(\count_reg_n_0_[5] ),
-        .I3(\count_reg_n_0_[4] ),
+       (.I0(\count_reg_n_0_[2] ),
+        .I1(\count_reg_n_0_[3] ),
+        .I2(\count_reg_n_0_[4] ),
+        .I3(\count_reg_n_0_[5] ),
         .O(cnv_i_3_n_0));
   FDRE #(
     .INIT(1'b0)) 
@@ -306,135 +341,86 @@ module ADC_v5
         .D(cnv_i_2_n_0),
         .Q(cnv),
         .R(SR));
-  LUT6 #(
-    .INIT(64'h00000000AAAAABFB)) 
+  LUT4 #(
+    .INIT(16'h00F8)) 
     \count[0]_i_1 
-       (.I0(\count[5]_i_2_n_0 ),
-        .I1(start_adc_IBUF),
-        .I2(state[0]),
-        .I3(state[1]),
-        .I4(state[2]),
-        .I5(\count_reg_n_0_[0] ),
+       (.I0(\FSM_sequential_state[2]_i_5_n_0 ),
+        .I1(state[2]),
+        .I2(\count[5]_i_2_n_0 ),
+        .I3(\count_reg_n_0_[0] ),
         .O(n_count[0]));
-  LUT6 #(
-    .INIT(64'h0000FFBAFFBA0000)) 
-    \count[1]_i_1 
-       (.I0(\count[3]_i_2_n_0 ),
-        .I1(\count_reg_n_0_[5] ),
-        .I2(\count[3]_i_3_n_0 ),
-        .I3(\count[3]_i_4_n_0 ),
-        .I4(p_0_in1_in),
-        .I5(\count_reg_n_0_[0] ),
-        .O(n_count[1]));
   LUT5 #(
-    .INIT(32'h0EE0E0E0)) 
+    .INIT(32'h00EAEA00)) 
+    \count[1]_i_1 
+       (.I0(\count[5]_i_2_n_0 ),
+        .I1(state[2]),
+        .I2(\FSM_sequential_state[2]_i_5_n_0 ),
+        .I3(\count_reg_n_0_[0] ),
+        .I4(p_0_in__0),
+        .O(n_count[1]));
+  LUT6 #(
+    .INIT(64'h00EAEAEAEA000000)) 
     \count[2]_i_1 
        (.I0(\count[5]_i_2_n_0 ),
-        .I1(\count[3]_i_4_n_0 ),
-        .I2(\count_reg_n_0_[2] ),
-        .I3(\count_reg_n_0_[0] ),
-        .I4(p_0_in1_in),
+        .I1(state[2]),
+        .I2(\FSM_sequential_state[2]_i_5_n_0 ),
+        .I3(p_0_in__0),
+        .I4(\count_reg_n_0_[0] ),
+        .I5(\count_reg_n_0_[2] ),
         .O(n_count[2]));
-  LUT6 #(
-    .INIT(64'h0000FFBAFFBA0000)) 
+  LUT5 #(
+    .INIT(32'h00EAEA00)) 
     \count[3]_i_1 
-       (.I0(\count[3]_i_2_n_0 ),
-        .I1(\count_reg_n_0_[5] ),
-        .I2(\count[3]_i_3_n_0 ),
-        .I3(\count[3]_i_4_n_0 ),
+       (.I0(\count[5]_i_2_n_0 ),
+        .I1(state[2]),
+        .I2(\FSM_sequential_state[2]_i_5_n_0 ),
+        .I3(\count[4]_i_2_n_0 ),
         .I4(\count_reg_n_0_[3] ),
-        .I5(\count[3]_i_5_n_0 ),
         .O(n_count[3]));
   LUT6 #(
-    .INIT(64'h00000000222E2E2E)) 
-    \count[3]_i_2 
-       (.I0(state[1]),
-        .I1(state[0]),
-        .I2(\count_reg_n_0_[5] ),
-        .I3(\count_reg_n_0_[4] ),
-        .I4(\count_reg_n_0_[3] ),
-        .I5(state[2]),
-        .O(\count[3]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h001000100010FF10)) 
-    \count[3]_i_3 
-       (.I0(p_0_in1_in),
-        .I1(\count_reg_n_0_[2] ),
-        .I2(state[0]),
-        .I3(state[2]),
-        .I4(\count_reg_n_0_[3] ),
-        .I5(\count_reg_n_0_[4] ),
-        .O(\count[3]_i_3_n_0 ));
-  LUT4 #(
-    .INIT(16'h001D)) 
-    \count[3]_i_4 
-       (.I0(start_adc_IBUF),
-        .I1(state[0]),
-        .I2(state[1]),
-        .I3(state[2]),
-        .O(\count[3]_i_4_n_0 ));
-  LUT3 #(
-    .INIT(8'h80)) 
-    \count[3]_i_5 
-       (.I0(p_0_in1_in),
-        .I1(\count_reg_n_0_[0] ),
-        .I2(\count_reg_n_0_[2] ),
-        .O(\count[3]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'hAAAAABFB00000000)) 
+    .INIT(64'h00EAEAEAEA000000)) 
     \count[4]_i_1 
        (.I0(\count[5]_i_2_n_0 ),
-        .I1(start_adc_IBUF),
-        .I2(state[0]),
-        .I3(state[1]),
-        .I4(state[2]),
-        .I5(\count[4]_i_2_n_0 ),
+        .I1(state[2]),
+        .I2(\FSM_sequential_state[2]_i_5_n_0 ),
+        .I3(\count_reg_n_0_[3] ),
+        .I4(\count[4]_i_2_n_0 ),
+        .I5(\count_reg_n_0_[4] ),
         .O(n_count[4]));
-  LUT5 #(
-    .INIT(32'h7FFF8000)) 
+  LUT3 #(
+    .INIT(8'h80)) 
     \count[4]_i_2 
-       (.I0(\count_reg_n_0_[3] ),
-        .I1(p_0_in1_in),
+       (.I0(\count_reg_n_0_[2] ),
+        .I1(p_0_in__0),
         .I2(\count_reg_n_0_[0] ),
-        .I3(\count_reg_n_0_[2] ),
-        .I4(\count_reg_n_0_[4] ),
         .O(\count[4]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'hAAAAABFB00000000)) 
+    .INIT(64'hEAEA00EA0000EA00)) 
     \count[5]_i_1 
        (.I0(\count[5]_i_2_n_0 ),
+        .I1(state[2]),
+        .I2(\FSM_sequential_state[2]_i_5_n_0 ),
+        .I3(\count_reg_n_0_[4] ),
+        .I4(\count[5]_i_3_n_0 ),
+        .I5(\count_reg_n_0_[5] ),
+        .O(n_count[5]));
+  LUT5 #(
+    .INIT(32'h00005FBB)) 
+    \count[5]_i_2 
+       (.I0(state[0]),
         .I1(start_adc_IBUF),
-        .I2(state[0]),
+        .I2(aclk_i_3_n_0),
         .I3(state[1]),
         .I4(state[2]),
-        .I5(\count[5]_i_3_n_0 ),
-        .O(n_count[5]));
-  LUT6 #(
-    .INIT(64'h0500FFFF05004540)) 
-    \count[5]_i_2 
-       (.I0(state[2]),
-        .I1(\count[5]_i_4_n_0 ),
-        .I2(state[0]),
-        .I3(state[1]),
-        .I4(\count_reg_n_0_[5] ),
-        .I5(\count[3]_i_3_n_0 ),
         .O(\count[5]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h7FFFFFFF80000000)) 
+  LUT4 #(
+    .INIT(16'h7FFF)) 
     \count[5]_i_3 
-       (.I0(\count_reg_n_0_[3] ),
-        .I1(\count_reg_n_0_[4] ),
-        .I2(p_0_in1_in),
-        .I3(\count_reg_n_0_[0] ),
-        .I4(\count_reg_n_0_[2] ),
-        .I5(\count_reg_n_0_[5] ),
+       (.I0(\count_reg_n_0_[0] ),
+        .I1(p_0_in__0),
+        .I2(\count_reg_n_0_[2] ),
+        .I3(\count_reg_n_0_[3] ),
         .O(\count[5]_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h7)) 
-    \count[5]_i_4 
-       (.I0(\count_reg_n_0_[3] ),
-        .I1(\count_reg_n_0_[4] ),
-        .O(\count[5]_i_4_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \count_reg[0] 
@@ -449,7 +435,7 @@ module ADC_v5
        (.C(clk_out1),
         .CE(1'b1),
         .D(n_count[1]),
-        .Q(p_0_in1_in),
+        .Q(p_0_in__0),
         .R(SR));
   FDRE #(
     .INIT(1'b0)) 
@@ -484,169 +470,208 @@ module ADC_v5
         .Q(\count_reg_n_0_[5] ),
         .R(SR));
   LUT6 #(
-    .INIT(64'hEB28FFFFEB280000)) 
-    \data[6]_i_1 
+    .INIT(64'hCFAAAACFC0AAAAC0)) 
+    \data[4]_i_1 
        (.I0(sync_out_dbp2),
-        .I1(dcop3),
-        .I2(dcop4),
-        .I3(db_n),
-        .I4(sync_n_4),
+        .I1(db_n),
+        .I2(\data[5]_i_2_n_0 ),
+        .I3(dcop4),
+        .I4(dcop3),
         .I5(ADC_out_OBUF[0]),
-        .O(\data[6]_i_1_n_0 ));
+        .O(\data[4]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hEB28FFFFEB280000)) 
-    \data[7]_i_1 
+    .INIT(64'hCFAAAACFC0AAAAC0)) 
+    \data[5]_i_1 
        (.I0(sync_out_dap2),
-        .I1(dcop3),
-        .I2(dcop4),
-        .I3(D),
-        .I4(sync_n_4),
+        .I1(D),
+        .I2(\data[5]_i_2_n_0 ),
+        .I3(dcop4),
+        .I4(dcop3),
         .I5(ADC_out_OBUF[1]),
-        .O(\data[7]_i_1_n_0 ));
+        .O(\data[5]_i_1_n_0 ));
+  LUT3 #(
+    .INIT(8'h40)) 
+    \data[5]_i_2 
+       (.I0(state[2]),
+        .I1(state[0]),
+        .I2(state[1]),
+        .O(\data[5]_i_2_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \data_reg[10] 
        (.C(clk_out1),
-        .CE(sync_n_5),
-        .D(ADC_out_OBUF[2]),
-        .Q(ADC_out_OBUF[4]),
-        .R(1'b0));
-  (* OPT_INSERTED_REPDRIVER *) 
-  FDRE #(
-    .INIT(1'b0)) 
-    \data_reg[10]_lopt_replica 
-       (.C(clk_out1),
-        .CE(sync_n_5),
-        .D(ADC_out_OBUF[2]),
-        .Q(\data_reg[10]_lopt_replica_1 ),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \data_reg[11] 
-       (.C(clk_out1),
-        .CE(sync_n_5),
-        .D(ADC_out_OBUF[3]),
-        .Q(ADC_out_OBUF[5]),
-        .R(1'b0));
-  (* OPT_INSERTED_REPDRIVER *) 
-  FDRE #(
-    .INIT(1'b0)) 
-    \data_reg[11]_lopt_replica 
-       (.C(clk_out1),
-        .CE(sync_n_5),
-        .D(ADC_out_OBUF[3]),
-        .Q(\data_reg[11]_lopt_replica_1 ),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \data_reg[12] 
-       (.C(clk_out1),
-        .CE(sync_n_5),
+        .CE(sync_n_4),
         .D(ADC_out_OBUF[4]),
         .Q(ADC_out_OBUF[6]),
         .R(1'b0));
   (* OPT_INSERTED_REPDRIVER *) 
   FDRE #(
     .INIT(1'b0)) 
-    \data_reg[12]_lopt_replica 
+    \data_reg[10]_lopt_replica 
        (.C(clk_out1),
-        .CE(sync_n_5),
+        .CE(sync_n_4),
         .D(ADC_out_OBUF[4]),
-        .Q(\data_reg[12]_lopt_replica_1 ),
+        .Q(\data_reg[10]_lopt_replica_1 ),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \data_reg[13] 
+    \data_reg[11] 
        (.C(clk_out1),
-        .CE(sync_n_5),
+        .CE(sync_n_4),
         .D(ADC_out_OBUF[5]),
         .Q(ADC_out_OBUF[7]),
         .R(1'b0));
   (* OPT_INSERTED_REPDRIVER *) 
   FDRE #(
     .INIT(1'b0)) 
+    \data_reg[11]_lopt_replica 
+       (.C(clk_out1),
+        .CE(sync_n_4),
+        .D(ADC_out_OBUF[5]),
+        .Q(\data_reg[11]_lopt_replica_1 ),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \data_reg[12] 
+       (.C(clk_out1),
+        .CE(sync_n_4),
+        .D(ADC_out_OBUF[6]),
+        .Q(ADC_out_OBUF[8]),
+        .R(1'b0));
+  (* OPT_INSERTED_REPDRIVER *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \data_reg[12]_lopt_replica 
+       (.C(clk_out1),
+        .CE(sync_n_4),
+        .D(ADC_out_OBUF[6]),
+        .Q(\data_reg[12]_lopt_replica_1 ),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \data_reg[13] 
+       (.C(clk_out1),
+        .CE(sync_n_4),
+        .D(ADC_out_OBUF[7]),
+        .Q(ADC_out_OBUF[9]),
+        .R(1'b0));
+  (* OPT_INSERTED_REPDRIVER *) 
+  FDRE #(
+    .INIT(1'b0)) 
     \data_reg[13]_lopt_replica 
        (.C(clk_out1),
-        .CE(sync_n_5),
-        .D(ADC_out_OBUF[5]),
+        .CE(sync_n_4),
+        .D(ADC_out_OBUF[7]),
         .Q(\data_reg[13]_lopt_replica_1 ),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \data_reg[14] 
        (.C(clk_out1),
-        .CE(sync_n_5),
-        .D(ADC_out_OBUF[6]),
-        .Q(ADC_out_OBUF[8]),
+        .CE(sync_n_4),
+        .D(ADC_out_OBUF[8]),
+        .Q(ADC_out_OBUF[10]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \data_reg[15] 
        (.C(clk_out1),
-        .CE(sync_n_5),
-        .D(ADC_out_OBUF[7]),
-        .Q(ADC_out_OBUF[9]),
+        .CE(sync_n_4),
+        .D(ADC_out_OBUF[9]),
+        .Q(ADC_out_OBUF[11]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \data_reg[4] 
+       (.C(clk_out1),
+        .CE(1'b1),
+        .D(\data[4]_i_1_n_0 ),
+        .Q(ADC_out_OBUF[0]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \data_reg[5] 
+       (.C(clk_out1),
+        .CE(1'b1),
+        .D(\data[5]_i_1_n_0 ),
+        .Q(ADC_out_OBUF[1]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \data_reg[6] 
        (.C(clk_out1),
-        .CE(1'b1),
-        .D(\data[6]_i_1_n_0 ),
-        .Q(ADC_out_OBUF[0]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \data_reg[7] 
-       (.C(clk_out1),
-        .CE(1'b1),
-        .D(\data[7]_i_1_n_0 ),
-        .Q(ADC_out_OBUF[1]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \data_reg[8] 
-       (.C(clk_out1),
-        .CE(sync_n_5),
+        .CE(sync_n_4),
         .D(ADC_out_OBUF[0]),
         .Q(ADC_out_OBUF[2]),
         .R(1'b0));
   (* OPT_INSERTED_REPDRIVER *) 
   FDRE #(
     .INIT(1'b0)) 
-    \data_reg[8]_lopt_replica 
+    \data_reg[6]_lopt_replica 
        (.C(clk_out1),
-        .CE(sync_n_5),
+        .CE(sync_n_4),
         .D(ADC_out_OBUF[0]),
-        .Q(\data_reg[8]_lopt_replica_1 ),
+        .Q(\data_reg[6]_lopt_replica_1 ),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
-    \data_reg[9] 
+    \data_reg[7] 
        (.C(clk_out1),
-        .CE(sync_n_5),
+        .CE(sync_n_4),
         .D(ADC_out_OBUF[1]),
         .Q(ADC_out_OBUF[3]),
         .R(1'b0));
   (* OPT_INSERTED_REPDRIVER *) 
   FDRE #(
     .INIT(1'b0)) 
+    \data_reg[7]_lopt_replica 
+       (.C(clk_out1),
+        .CE(sync_n_4),
+        .D(ADC_out_OBUF[1]),
+        .Q(\data_reg[7]_lopt_replica_1 ),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \data_reg[8] 
+       (.C(clk_out1),
+        .CE(sync_n_4),
+        .D(ADC_out_OBUF[2]),
+        .Q(ADC_out_OBUF[4]),
+        .R(1'b0));
+  (* OPT_INSERTED_REPDRIVER *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \data_reg[8]_lopt_replica 
+       (.C(clk_out1),
+        .CE(sync_n_4),
+        .D(ADC_out_OBUF[2]),
+        .Q(\data_reg[8]_lopt_replica_1 ),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \data_reg[9] 
+       (.C(clk_out1),
+        .CE(sync_n_4),
+        .D(ADC_out_OBUF[3]),
+        .Q(ADC_out_OBUF[5]),
+        .R(1'b0));
+  (* OPT_INSERTED_REPDRIVER *) 
+  FDRE #(
+    .INIT(1'b0)) 
     \data_reg[9]_lopt_replica 
        (.C(clk_out1),
-        .CE(sync_n_5),
-        .D(ADC_out_OBUF[1]),
+        .CE(sync_n_4),
+        .D(ADC_out_OBUF[3]),
         .Q(\data_reg[9]_lopt_replica_1 ),
         .R(1'b0));
   sync_reg sync
        (.D(D),
-        .E(sync_n_5),
+        .E(sync_n_4),
         .clk_out1(clk_out1),
-        .\data_reg[6] (sync_n_4),
         .db_n(db_n),
         .dco_n(dco_n),
         .dcop3(dcop3),
         .dcop4(dcop4),
-        .out(state),
         .sync_out_dap2(sync_out_dap2),
         .sync_out_dbp2(sync_out_dbp2));
 endmodule
@@ -751,7 +776,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
         .RST(1'b0));
 endmodule
 
-(* ECO_CHECKSUM = "f1fed361" *) 
+(* ECO_CHECKSUM = "6d0c0357" *) 
 (* NotValidForBitStream *)
 module preset
    (sys_clk_p,
@@ -794,7 +819,7 @@ module preset
   output clk;
 
   wire [15:0]ADC_out;
-  wire [15:6]ADC_out_OBUF;
+  wire [15:4]ADC_out_OBUF;
   wire aclk;
   wire aclk_n;
   wire aclk_p;
@@ -821,6 +846,8 @@ module preset
   wire lopt_3;
   wire lopt_4;
   wire lopt_5;
+  wire lopt_6;
+  wire lopt_7;
   wire reset;
   wire reset_IBUF;
   wire start_adc;
@@ -829,7 +856,7 @@ module preset
   (* DIFF_TERM = 0 *) (* IBUF_LOW_PWR = 0 *) wire sys_clk_p;
   wire tl;
   wire tp;
-  wire [7:2]NLW_adc_ADC_out_OBUF_UNCONNECTED;
+  wire [9:2]NLW_adc_ADC_out_OBUF_UNCONNECTED;
 
 initial begin
  $sdf_annotate("ADC_tb_time_impl.sdf",,,,"tool_control");
@@ -868,25 +895,23 @@ end
        (.I(1'b0),
         .O(ADC_out[3]),
         .T(1'b1));
-  OBUFT \ADC_out_OBUF[4]_inst 
-       (.I(1'b0),
-        .O(ADC_out[4]),
-        .T(1'b1));
-  OBUFT \ADC_out_OBUF[5]_inst 
-       (.I(1'b0),
-        .O(ADC_out[5]),
-        .T(1'b1));
+  OBUF \ADC_out_OBUF[4]_inst 
+       (.I(ADC_out_OBUF[4]),
+        .O(ADC_out[4]));
+  OBUF \ADC_out_OBUF[5]_inst 
+       (.I(ADC_out_OBUF[5]),
+        .O(ADC_out[5]));
   OBUF \ADC_out_OBUF[6]_inst 
-       (.I(ADC_out_OBUF[6]),
+       (.I(lopt_4),
         .O(ADC_out[6]));
   OBUF \ADC_out_OBUF[7]_inst 
-       (.I(ADC_out_OBUF[7]),
+       (.I(lopt_5),
         .O(ADC_out[7]));
   OBUF \ADC_out_OBUF[8]_inst 
-       (.I(lopt_4),
+       (.I(lopt_6),
         .O(ADC_out[8]));
   OBUF \ADC_out_OBUF[9]_inst 
-       (.I(lopt_5),
+       (.I(lopt_7),
         .O(ADC_out[9]));
   (* BOX_TYPE = "PRIMITIVE" *) 
   (* CAPACITANCE = "DONT_CARE" *) 
@@ -926,8 +951,8 @@ end
        (.I(aclk),
         .O(aclk_p),
         .OB(aclk_n));
-  ADC_v5 adc
-       (.ADC_out_OBUF({ADC_out_OBUF[15:14],NLW_adc_ADC_out_OBUF_UNCONNECTED[7:2],ADC_out_OBUF[7:6]}),
+  ADC_v6 adc
+       (.ADC_out_OBUF({ADC_out_OBUF[15:14],NLW_adc_ADC_out_OBUF_UNCONNECTED[9:2],ADC_out_OBUF[5:4]}),
         .D(da),
         .SR(reset_IBUF),
         .aclk(aclk),
@@ -942,6 +967,8 @@ end
         .lopt_3(lopt_3),
         .lopt_4(lopt_4),
         .lopt_5(lopt_5),
+        .lopt_6(lopt_6),
+        .lopt_7(lopt_7),
         .start_adc_IBUF(start_adc_IBUF));
   OBUF adc_done_OBUF_inst
        (.I(adc_done_OBUF),
@@ -978,10 +1005,8 @@ module sync_reg
     dcop4,
     sync_out_dbp2,
     sync_out_dap2,
-    \data_reg[6] ,
     E,
     clk_out1,
-    out,
     D,
     db_n,
     dco_n);
@@ -989,10 +1014,8 @@ module sync_reg
   output dcop4;
   output sync_out_dbp2;
   output sync_out_dap2;
-  output \data_reg[6] ;
   output [0:0]E;
   input clk_out1;
-  input [2:0]out;
   input [0:0]D;
   input [0:0]db_n;
   input [0:0]dco_n;
@@ -1000,12 +1023,10 @@ module sync_reg
   wire [0:0]D;
   wire [0:0]E;
   wire clk_out1;
-  wire \data_reg[6] ;
   wire [0:0]db_n;
   wire [0:0]dco_n;
   wire dcop3;
   wire dcop4;
-  wire [2:0]out;
   (* HBLKNM = "sync_reg" *) (* SHIFT_EXTRACT = "NO" *) (* async_reg = "true" *) wire [1:0]sreg_da;
   (* HBLKNM = "sync_reg" *) (* SHIFT_EXTRACT = "NO" *) (* async_reg = "true" *) wire [1:0]sreg_db;
   (* HBLKNM = "sync_reg" *) (* SHIFT_EXTRACT = "NO" *) (* async_reg = "true" *) wire [3:0]sreg_dco;
@@ -1018,15 +1039,6 @@ module sync_reg
        (.I0(dcop3),
         .I1(dcop4),
         .O(E));
-  LUT5 #(
-    .INIT(32'h08FFFF08)) 
-    \data[7]_i_2 
-       (.I0(out[0]),
-        .I1(out[1]),
-        .I2(out[2]),
-        .I3(dcop4),
-        .I4(dcop3),
-        .O(\data_reg[6] ));
   initial assign \sreg_da_reg[0] .notifier = 1'bx;
 (* ASYNC_REG *) 
   (* HBLKNM = "sync_reg" *) 

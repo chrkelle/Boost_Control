@@ -22,7 +22,7 @@
 
 module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n, 
            da_p, da_n, db_p, db_n, aclk_p, aclk_n, cnv_p, cnv_n, 
-           tp, tl, dacclk, ctrl_2_dac, done);
+           tp, tl, dacclk, ctrl_2_dac, done, ADC_ref, ki, kp);
     
     //system inputs
     input wire clk, reset, start, step_up, ctrl_start;
@@ -31,6 +31,8 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     reg cold_start, cold_start_p;
     //controller inputs
     reg [15:0] adc_2_ctrl;
+    output wire signed [31:0] ki, kp;
+    output wire signed [15:0] ADC_ref;
     //dac inputs
     
     //system outputs
@@ -75,11 +77,13 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     OBUFDS_inst0(.O(aclk_p), .OB(aclk_n), .I(aclk));
     
     //module instantiation        
-    ADC_v5 adc(.clk(clk), .reset(reset), .dco(dco), .da(da),. db(db), .start(start_adc),
+    ADC_v6 adc(.clk(clk), .reset(reset), .dco(dco), .da(da),. db(db), .start(start_adc),
          .aclk(aclk), .cnv(cnv_p), .tp(tp), .tl(tl), .data(ADC_out), .adc_done(adc_done));
+        
+    step_ctrl stp(.clk(clk), .reset(reset), .step_up(step_up), .ki(ki), .kp(kp), .ADC_ref(ADC_ref));
          
-    controller control(.clk(clk), .reset(reset), .step_up(step_up),.ADC_done(adc_done), .ADC_in(adc_2_ctrl), .i(i_out),
-                 .control_done(control_done));
+    controller control(.clk(clk), .reset(reset), .ADC_done(adc_done), .ADC_ref(ADC_ref),
+                       .ki(ki), .kp(kp),  .ADC_in(adc_2_ctrl), .i(i_out), .control_done(control_done));
          
     DAC dac(.clk(clk), .start(control_done), .reset(reset), .dacclk(dacclk), .dac_done(dac_done));
     

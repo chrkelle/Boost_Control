@@ -2,3 +2,6 @@ Running: xsim.dir/LFSR_tb_time_impl/xsimk.exe -simmode gui -wdb LFSR_tb_time_imp
 Design successfully loaded
 Design Loading Memory Usage: 6160 KB (Peak: 6160 KB)
 Design Loading CPU Usage: 46 ms
+Simulation completed
+Simulation Memory Usage: 9576 KB (Peak: 9576 KB)
+Simulation CPU Usage: 2952 ms

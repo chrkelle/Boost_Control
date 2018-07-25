@@ -20,12 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
+module controller(clk, reset, ADC_done, ADC_in, ADC_ref, ki, kp, i, control_done);
 
     //inputs
-    input wire clk, reset, step_up;
+    input wire clk, reset;
     input wire ADC_done;
-    input wire signed [15:0] ADC_in;
+    input wire signed [15:0] ADC_in, ADC_ref;
+    input wire signed [31:0] ki, kp;
     output reg signed [31:0] i;
     output reg control_done;
         
@@ -57,7 +58,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
     reg signed [31:0] s1s2_integ_e;
     reg s1s2_wr_i_en;
     wire signed [31:0] p_i;
-    reg  signed [31:0] kp, n_kp;
+
     assign p_i = i;
     
     //s2 outputs
@@ -66,7 +67,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
     //s1 inputs/s0s1 pipeline reg
     reg signed [15:0] s0s1_error;
     reg signed [15:0] s0s1_p_error;
-    reg signed [31:0] ki, n_ki;
+
     reg s0s1_wr_i_en;
     
     //s1 outputs
@@ -76,8 +77,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
     //s0 inputs/s0s
     reg signed [15:0] ADC;
     wire signed [15:0] ADC_error;
-    reg signed [15:0] ADC_ref;
-    reg signed [15:0] n_ADC_ref;
+
     //output reg signed [31:0] p_error;
     
     //s0 outputs    
@@ -177,7 +177,7 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
         end
         else if(ADC_done) begin
             wr_i_en <= 1;
-            ADC     <= {6'b111111, ADC_in[15:6]};
+            ADC     <= {4'b1111, ADC_in[15:4]};
         end
     end
     
@@ -230,74 +230,6 @@ module controller(clk, reset, step_up, ADC_done, ADC_in, i, control_done);
             pipe_clk <= n_pipe_clk;
             clk_count <= n_clk_count;
         end
-    end
-    
-    always @(posedge clk, posedge reset) begin
-        if(reset) begin
-            step_up_state   <= 0;
-            kp              <= 0;
-            ki              <= 100;
-            ADC_ref         <= 177;
-            step_count      <= 0;
-        end
-        else begin
-            step_up_state <= n_step_up_state;
-            kp            <= n_kp;
-            ki            <= n_ki;
-            ADC_ref       <= n_ADC_ref;
-            step_count    <= n_step_count;
-        end
-    end
-    
-    always@* begin
-        n_step_up_state = step_up_state;
-        n_kp = kp;
-        n_ki = ki;
-        n_ADC_ref = ADC_ref;
-        n_step_count = step_count + 1;
-        
-        case(step_up_state)
-            0: begin    //30
-                if(step_up) begin
-                    n_step_up_state = 2;
-                    n_step_count = 0;
-                end
-            end
-            1: begin    //35
-                n_ki = 250;
-                n_kp = 25000;
-                n_ADC_ref = 177;
-                if(step_count >= 2000) begin
-                    n_step_up_state = 2;
-                    n_step_count = 0;
-                end
-            end
-            2: begin //40
-                n_ki = 250;
-                n_kp = 17500;
-                n_ADC_ref = 187;
-                if(step_count >= 2000) begin
-                    n_step_up_state = 2;
-                    n_step_count = 0;
-                end
-            end
-            3: begin //45
-                n_ki = 350;
-                n_kp = 35000;
-                n_ADC_ref = 227;
-                if(step_count >= 2000) begin
-                    n_step_up_state = 4;
-                    n_step_count = 0;
-                end
-            end
-            4: begin //50
-                n_ki = 350;
-                n_kp = 35000;
-                n_ADC_ref = 252;
-            end
-
-        endcase
-    
     end
 
 endmodule

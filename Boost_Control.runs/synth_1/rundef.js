@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log preset_LFSR.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source preset_LFSR.tcl" );
+         "-log boost.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source boost.tcl" );
 
 
 

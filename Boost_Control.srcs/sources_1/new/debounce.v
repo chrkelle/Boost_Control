@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module debounce #(parameter DELAY=24'd1000)(clk, PB, PB_state);//, PB_up, PB_down);
+module debounce #(parameter DELAY=24'd10000)(clk, PB, PB_state);//, PB_up, PB_down);
 		input clk;  // "clk" is the clock
 		input PB;  // "PB" is the glitched, asynchronous, active low push-button signal
 
