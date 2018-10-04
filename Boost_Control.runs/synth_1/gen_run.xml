@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a50tfgg484-3" LaunchTime="1532551978">
+<GenRun Id="synth_1" LaunchPart="xc7a50tfgg484-3" LaunchTime="1532569183">
   <File Type="PA-TCL" Name="boost.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="boost_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="boost_reports.tcl"/>
@@ -290,7 +290,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="step_counter"/>

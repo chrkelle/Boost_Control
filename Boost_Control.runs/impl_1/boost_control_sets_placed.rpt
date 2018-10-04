@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date         : Wed Jul 25 16:54:58 2018
+| Date         : Wed Jul 25 21:41:37 2018
 | Host         : DESKTOP-EPHBFNF running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file boost_control_sets_placed.rpt
 | Design       : boost
@@ -24,7 +24,7 @@ Table of Contents
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
 | Number of unique control sets                            |    18 |
-| Unused register locations in slices containing registers |    90 |
+| Unused register locations in slices containing registers |    96 |
 +----------------------------------------------------------+-------+
 
 
@@ -51,11 +51,11 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |             817 |          190 |
-| No           | No                    | Yes                    |             184 |           45 |
-| No           | Yes                   | No                     |             126 |           42 |
+| No           | No                    | Yes                    |             194 |           50 |
+| No           | Yes                   | No                     |             126 |           40 |
 | Yes          | No                    | No                     |              11 |            3 |
-| Yes          | No                    | Yes                    |              45 |           10 |
-| Yes          | Yes                   | No                     |              47 |           14 |
+| Yes          | No                    | Yes                    |              45 |            7 |
+| Yes          | Yes                   | No                     |              47 |           12 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -65,23 +65,23 @@ Table of Contents
 +----------------------+------------------------------------------+-------------------------------------+------------------+----------------+
 |     Clock Signal     |               Enable Signal              |           Set/Reset Signal          | Slice Load Count | Bel Load Count |
 +----------------------+------------------------------------------+-------------------------------------+------------------+----------------+
+|  inst0/inst/clk_out1 | cpu_inst/sw_on_i_1_n_0                   | debounce_inst2/reset                |                1 |              1 |
 |  inst0/inst/clk_out1 | acd_inst/adc/cnv_i_1_n_0                 | debounce_inst2/reset                |                1 |              1 |
 |  inst0/inst/clk_out1 | acd_inst/control/E[0]                    |                                     |                1 |              1 |
-|  inst0/inst/clk_out1 | cpu_inst/sw_on_i_1_n_0                   | debounce_inst2/reset                |                1 |              1 |
 |  inst0/inst/clk_out1 | acd_inst/stp/FSM_onehot_state[6]_i_1_n_0 | debounce_inst2/reset                |                2 |              7 |
-|  inst0/inst/clk_out1 | acd_inst/control/control_done            | debounce_inst2/reset                |                2 |              9 |
+|  inst0/inst/clk_out1 | acd_inst/control/control_done            | debounce_inst2/reset                |                3 |              9 |
 |  inst0/inst/clk_out1 |                                          | cpu_inst/cntr_load_reg_n_0          |                3 |             10 |
 |  inst0/inst/clk_out1 | acd_inst/adc/sync/E[0]                   |                                     |                2 |             10 |
-|  inst0/inst/clk_out1 | acd_inst/adc/adc_done                    | debounce_inst2/reset                |                3 |             12 |
+|  inst0/inst/clk_out1 | acd_inst/adc/adc_done                    | debounce_inst2/reset                |                2 |             12 |
 |  inst0/inst/clk_out1 | acd_inst/control/wr_i_en                 | debounce_inst2/reset                |                2 |             13 |
-|  inst0/inst/clk_out1 |                                          | acd_inst/stp/SINIT                  |                6 |             16 |
-|  inst0/inst/clk_out1 | acd_inst/stp/n_ki                        | debounce_inst2/reset                |                5 |             17 |
+|  inst0/inst/clk_out1 |                                          | acd_inst/stp/SINIT                  |                4 |             16 |
+|  inst0/inst/clk_out1 | acd_inst/stp/n_ki                        | debounce_inst2/reset                |                3 |             17 |
 |  inst0/inst/clk_out1 |                                          | debounce_inst3/PB_idle              |                7 |             25 |
 |  inst0/inst/clk_out1 |                                          | debounce_inst1/PB_idle              |                7 |             25 |
 |  inst0/inst/clk_out1 |                                          | debounce_inst2/PB_cnt[0]_i_1__1_n_0 |                7 |             25 |
-|  pipe_clk_BUFG       | acd_inst/control/s2s3_wr_i_en            | debounce_inst2/reset                |                8 |             32 |
-|  inst0/inst/clk_out1 |                                          | debounce_inst2/reset                |               22 |             47 |
-|  pipe_clk_BUFG       |                                          | debounce_inst2/reset                |               35 |            162 |
+|  pipe_clk_BUFG       | acd_inst/control/s2s3_wr_i_en            | debounce_inst2/reset                |                5 |             32 |
+|  inst0/inst/clk_out1 |                                          | debounce_inst2/reset                |               28 |             57 |
+|  pipe_clk_BUFG       |                                          | debounce_inst2/reset                |               34 |            162 |
 |  inst0/inst/clk_out1 |                                          |                                     |              193 |            823 |
 +----------------------+------------------------------------------+-------------------------------------+------------------+----------------+
 

@@ -20,13 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module controller(clk, reset, ADC_done, ADC_in, ADC_ref, ki, kp, i, control_done);
+module controller(clk, reset, ADC_done, ADC_in, ADC_ref, ki_in, kp_in, i, control_done);
 
     //inputs
     input wire clk, reset;
     input wire ADC_done;
     input wire signed [15:0] ADC_in, ADC_ref;
-    input wire signed [31:0] ki, kp;
+    input wire signed [31:0] ki_in, kp_in;
     output reg signed [31:0] i;
     output reg control_done;
         
@@ -43,6 +43,7 @@ module controller(clk, reset, ADC_done, ADC_in, ADC_ref, ki, kp, i, control_done
     reg pipe_clk;
     reg n_pipe_clk;
     reg [1:0] clk_count, n_clk_count;
+    reg signed [31:0] ki, kp;
         
     //pipeline write enable
     reg wr_i_en;
@@ -223,12 +224,16 @@ module controller(clk, reset, ADC_done, ADC_in, ADC_ref, ki, kp, i, control_done
             count <= 0;
             pipe_clk <= 0;
             clk_count <= 0;
+            ki <= 10;
+            kp <= 0;
         end
         else begin
             state <= n_state;
             count <= n_count;
             pipe_clk <= n_pipe_clk;
             clk_count <= n_clk_count;
+            ki <= ki_in;
+            kp <= kp_in;
         end
     end
 

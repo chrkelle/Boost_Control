@@ -22,8 +22,8 @@
 
 module stage3(clk, prop_e, part_sum, i);
     input clk;
-    input [31:0] prop_e, part_sum;
-    output wire [31:0] i;
+    input wire signed [31:0] prop_e, part_sum;
+    output wire signed [31:0] i;
     
     c_addsub_1 add (
               .A(prop_e),       // input wire [31 : 0] A

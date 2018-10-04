@@ -31,7 +31,8 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     reg cold_start, cold_start_p;
     //controller inputs
     reg [15:0] adc_2_ctrl;
-    wire signed [31:0] ki, kp;
+    wire signed [31:0] ki;
+    wire signed [31:0] kp;
     wire signed [15:0] ADC_ref;
     //dac inputs
     
@@ -61,7 +62,6 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     assign start_adc = (start & ~cold_start_p) || ctrl_start;
     assign cnv_n = 0;
    
-    wire signed [15:0] ADC_ref;
     
     //buffers
     
@@ -84,7 +84,7 @@ module ACD(clk, reset, hi_muxsel, start, step_up, ctrl_start, dco_p, dco_n,
     step_ctrl stp(.clk(clk), .reset(reset), .step_up(step_up), .ki(ki), .kp(kp), .ADC_ref(ADC_ref));
          
     controller control(.clk(clk), .reset(reset), .ADC_done(adc_done), .ADC_ref(ADC_ref),
-                       .ki(ki), .kp(kp),  .ADC_in(adc_2_ctrl), .i(i_out), .control_done(control_done));
+                       .ki_in(ki), .kp_in(kp),  .ADC_in(adc_2_ctrl), .i(i_out), .control_done(control_done));
          
     DAC dac(.clk(clk), .start(control_done), .reset(reset), .dacclk(dacclk), .dac_done(dac_done));
     

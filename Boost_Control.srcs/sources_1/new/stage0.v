@@ -22,8 +22,8 @@
 
 module stage0(clk, ADC_val, ADC_ref, ADC_error);
     input clk;
-    input [15:0] ADC_val, ADC_ref;
-    output wire [15:0] ADC_error;
+    input wire signed [15:0] ADC_val, ADC_ref;
+    output wire signed [15:0] ADC_error;
     
     c_addsub_2 add (
       .A(ADC_ref),      // input wire [15 : 0] A

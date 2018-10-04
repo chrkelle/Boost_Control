@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
-| Date             : Wed Jul 25 16:55:25 2018
+| Date             : Wed Jul 25 21:42:04 2018
 | Host             : DESKTOP-EPHBFNF running 64-bit major release  (build 9200)
 | Command          : report_power -file boost_power_routed.rpt -pb boost_power_summary_routed.pb -rpx boost_power_routed.rpx
 | Design           : boost
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.345        |
+| Total On-Chip Power (W)  | 0.344        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.270        |
+| Dynamic (W)              | 0.269        |
 | Device Static (W)        | 0.074        |
 | Total Off-Chip Power (W) | 0.001        |
 | Effective TJA (C/W)      | 2.8          |
@@ -53,19 +53,19 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.023 |        5 |       --- |             --- |
-| Slice Logic             |     0.007 |     2465 |       --- |             --- |
-|   LUT as Logic          |     0.005 |      612 |     32600 |            1.88 |
-|   Register              |     0.001 |     1230 |     65200 |            1.89 |
+| Clocks                  |     0.022 |        5 |       --- |             --- |
+| Slice Logic             |     0.007 |     2475 |       --- |             --- |
+|   LUT as Logic          |     0.005 |      615 |     32600 |            1.89 |
+|   Register              |     0.001 |     1240 |     65200 |            1.90 |
 |   CARRY4                |    <0.001 |      200 |      8150 |            2.45 |
 |   BUFG                  |    <0.001 |        1 |        32 |            3.13 |
 |   Others                |     0.000 |      240 |       --- |             --- |
 |   LUT as Shift Register |     0.000 |        6 |      9600 |            0.06 |
-| Signals                 |     0.009 |     1496 |       --- |             --- |
+| Signals                 |     0.009 |     1510 |       --- |             --- |
 | PLL                     |     0.123 |        1 |         5 |           20.00 |
 | I/O                     |     0.108 |       39 |       250 |           15.60 |
 | Static Power            |     0.074 |          |           |                 |
-| Total                   |     0.345 |          |           |                 |
+| Total                   |     0.344 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.064 |       0.054 |      0.010 |
+| Vccint    |       1.000 |     0.063 |       0.053 |      0.010 |
 | Vccaux    |       1.800 |     0.082 |       0.070 |      0.013 |
 | Vcco33    |       3.300 |     0.009 |       0.008 |      0.001 |
 | Vcco25    |       2.500 |     0.027 |       0.026 |      0.001 |
@@ -146,11 +146,11 @@ Table of Contents
 +---------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                        | Power (W) |
 +---------------------------------------------------------------------------------------------+-----------+
-| boost                                                                                       |     0.270 |
+| boost                                                                                       |     0.269 |
 |   acd_inst                                                                                  |     0.080 |
 |     adc                                                                                     |     0.001 |
 |       sync                                                                                  |    <0.001 |
-|     control                                                                                 |     0.029 |
+|     control                                                                                 |     0.028 |
 |       s0                                                                                    |    <0.001 |
 |         add                                                                                 |    <0.001 |
 |           U0                                                                                |    <0.001 |
@@ -167,7 +167,7 @@ Table of Contents
 |                 pipelining.stages[2].slices[2].laststage.diagonal.diagonal_adder            |    <0.001 |
 |                   i_lut6.i_lut6_addsub                                                      |    <0.001 |
 |                     i_q.i_simple.qreg                                                       |    <0.001 |
-|       s1                                                                                    |     0.008 |
+|       s1                                                                                    |     0.007 |
 |         mult                                                                                |     0.006 |
 |           U0                                                                                |     0.006 |
 |             i_mult                                                                          |     0.006 |
@@ -189,10 +189,10 @@ Table of Contents
 |                   i_lut6.i_lut6_addsub                                                      |    <0.001 |
 |                     i_q.i_simple.qreg                                                       |    <0.001 |
 |       s2                                                                                    |     0.011 |
-|         add                                                                                 |     0.005 |
-|           U0                                                                                |     0.005 |
-|             xst_addsub                                                                      |     0.005 |
-|               i_baseblox.i_baseblox_addsub                                                  |     0.005 |
+|         add                                                                                 |     0.004 |
+|           U0                                                                                |     0.004 |
+|             xst_addsub                                                                      |     0.004 |
+|               i_baseblox.i_baseblox_addsub                                                  |     0.004 |
 |                 pipelining.stages[1].slices[1].first.first_stage_adder                      |    <0.001 |
 |                   i_lut6.i_lut6_addsub                                                      |    <0.001 |
 |                     i_q.i_simple.qreg                                                       |    <0.001 |

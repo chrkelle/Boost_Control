@@ -57,6 +57,8 @@ module step_ctrl(clk, reset, step_up, ki, kp, ADC_ref);
             end
             
             2: begin
+                //n_ki = 50;
+                //n_kp = 2800;
                 n_state = 3;
             end
             
