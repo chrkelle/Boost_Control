@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2680 
+INFO: Helper process launched with PID 2584 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 446.367 ; gain = 100.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 445.766 ; gain = 99.422
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'boost' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/main.v:23]
 INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [C:/Xilinx/Vivado/2018.1/scripts/rt/data/unisim_comp.v:19487]
@@ -28,19 +28,19 @@ INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [C:/Xilinx/Vivado/2018.1/scrip
 	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: LVDS_25 - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (1#1) [C:/Xilinx/Vivado/2018.1/scripts/rt/data/unisim_comp.v:19487]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-10368-DESKTOP-EPHBFNF/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (2#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-10368-DESKTOP-EPHBFNF/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-11172-DESKTOP-EPHBFNF/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (2#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-11172-DESKTOP-EPHBFNF/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/debounce.v:23]
-	Parameter DELAY bound to: 24'b000000000000001111101000 
+	Parameter DELAY bound to: 24'b000000000010011100010000 
 INFO: [Synth 8-6155] done synthesizing module 'debounce' (3#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/debounce.v:23]
 INFO: [Synth 8-6157] synthesizing module 'sync_dout' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/sync_dout.v:23]
 INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/sync_dout.v:27]
 INFO: [Synth 8-6155] done synthesizing module 'sync_dout' (4#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/sync_dout.v:23]
-INFO: [Synth 8-6157] synthesizing module 'cpu' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/cpu.v:23]
+INFO: [Synth 8-6157] synthesizing module 'cpu_v3' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/cpu_v3.v:23]
 	Parameter adc_delay bound to: 30 - type: integer 
-	Parameter off_time bound to: 90 - type: integer 
-	Parameter sw_on_delay bound to: 160 - type: integer 
-	Parameter clear_delay bound to: 165 - type: integer 
+	Parameter off_time bound to: 80 - type: integer 
+	Parameter sw_on_delay bound to: 130 - type: integer 
+	Parameter clear_delay bound to: 135 - type: integer 
 	Parameter preset_delay bound to: 4 - type: integer 
 	Parameter s0 bound to: 10'b0000000000 
 	Parameter s1 bound to: 10'b0000000001 
@@ -49,59 +49,63 @@ INFO: [Synth 8-6157] synthesizing module 'cpu' [C:/Users/Chris/Desktop/Research/
 	Parameter s4 bound to: 10'b0000001000 
 	Parameter s5 bound to: 10'b0000010000 
 	Parameter s6 bound to: 10'b0000100000 
-INFO: [Synth 8-5534] Detected attribute (* FSM_ENCODING = "ONE-HOT" *) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/cpu.v:43]
-INFO: [Synth 8-6157] synthesizing module 'on_time_counter' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-10368-DESKTOP-EPHBFNF/realtime/on_time_counter_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'on_time_counter' (5#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-10368-DESKTOP-EPHBFNF/realtime/on_time_counter_stub.v:6]
-WARNING: [Synth 8-6014] Unused sequential element comp_edge_p_reg was removed.  [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/cpu.v:74]
-INFO: [Synth 8-6155] done synthesizing module 'cpu' (6#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/cpu.v:23]
+INFO: [Synth 8-5534] Detected attribute (* FSM_ENCODING = "ONE-HOT" *) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/cpu_v3.v:43]
+INFO: [Synth 8-6157] synthesizing module 'on_time_counter' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-11172-DESKTOP-EPHBFNF/realtime/on_time_counter_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'on_time_counter' (5#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-11172-DESKTOP-EPHBFNF/realtime/on_time_counter_stub.v:6]
+WARNING: [Synth 8-6014] Unused sequential element comp_edge_p_reg was removed.  [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/cpu_v3.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_v3' (6#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/cpu_v3.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ACD' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/ACD.v:23]
 INFO: [Synth 8-6157] synthesizing module 'OBUFDS' [C:/Xilinx/Vivado/2018.1/scripts/rt/data/unisim_comp.v:27288]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: LVDS_25 - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'OBUFDS' (7#1) [C:/Xilinx/Vivado/2018.1/scripts/rt/data/unisim_comp.v:27288]
-INFO: [Synth 8-6157] synthesizing module 'ADC' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/ADC.v:27]
+INFO: [Synth 8-6157] synthesizing module 'ADC_v6' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/ADC_v6.v:27]
 INFO: [Synth 8-6157] synthesizing module 'sync_reg' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/sync_reg.v:23]
 INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/sync_reg.v:34]
 INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/sync_reg.v:35]
 INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/sync_reg.v:36]
 INFO: [Synth 8-6155] done synthesizing module 'sync_reg' (8#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/sync_reg.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/ADC.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'ADC' (9#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/ADC.v:27]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/ADC_v6.v:75]
+WARNING: [Synth 8-3936] Found unconnected internal register 'n_data_reg' and it is trimmed from '16' to '14' bits. [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/ADC_v6.v:72]
+INFO: [Synth 8-6155] done synthesizing module 'ADC_v6' (9#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/ADC_v6.v:27]
+INFO: [Synth 8-6157] synthesizing module 'step_ctrl' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/step_ctrl.v:23]
+INFO: [Synth 8-6157] synthesizing module 'step_counter' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-11172-DESKTOP-EPHBFNF/realtime/step_counter_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'step_counter' (10#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-11172-DESKTOP-EPHBFNF/realtime/step_counter_stub.v:6]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/step_ctrl.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'step_ctrl' (11#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/step_ctrl.v:23]
 INFO: [Synth 8-6157] synthesizing module 'controller' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/controller.v:23]
 INFO: [Synth 8-6157] synthesizing module 'stage0' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/stage0.v:23]
-INFO: [Synth 8-6157] synthesizing module 'c_addsub_2' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-10368-DESKTOP-EPHBFNF/realtime/c_addsub_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'c_addsub_2' (10#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-10368-DESKTOP-EPHBFNF/realtime/c_addsub_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'stage0' (11#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/stage0.v:23]
+INFO: [Synth 8-6157] synthesizing module 'c_addsub_2' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-11172-DESKTOP-EPHBFNF/realtime/c_addsub_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'c_addsub_2' (12#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-11172-DESKTOP-EPHBFNF/realtime/c_addsub_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'stage0' (13#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/stage0.v:23]
 INFO: [Synth 8-6157] synthesizing module 'stage1' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/stage1.v:22]
-INFO: [Synth 8-6157] synthesizing module 'c_addsub_0' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-10368-DESKTOP-EPHBFNF/realtime/c_addsub_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'c_addsub_0' (12#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-10368-DESKTOP-EPHBFNF/realtime/c_addsub_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'mult_gen_0' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-10368-DESKTOP-EPHBFNF/realtime/mult_gen_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mult_gen_0' (13#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-10368-DESKTOP-EPHBFNF/realtime/mult_gen_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'stage1' (14#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/stage1.v:22]
+INFO: [Synth 8-6157] synthesizing module 'c_addsub_0' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-11172-DESKTOP-EPHBFNF/realtime/c_addsub_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'c_addsub_0' (14#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-11172-DESKTOP-EPHBFNF/realtime/c_addsub_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'mult_gen_0' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-11172-DESKTOP-EPHBFNF/realtime/mult_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mult_gen_0' (15#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-11172-DESKTOP-EPHBFNF/realtime/mult_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'stage1' (16#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/stage1.v:22]
 INFO: [Synth 8-6157] synthesizing module 'stage2' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/stage2.v:23]
-INFO: [Synth 8-6157] synthesizing module 'c_addsub_1' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-10368-DESKTOP-EPHBFNF/realtime/c_addsub_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'c_addsub_1' (15#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-10368-DESKTOP-EPHBFNF/realtime/c_addsub_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'stage2' (16#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/stage2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'c_addsub_1' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-11172-DESKTOP-EPHBFNF/realtime/c_addsub_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'c_addsub_1' (17#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/.Xil/Vivado-11172-DESKTOP-EPHBFNF/realtime/c_addsub_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'stage2' (18#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/stage2.v:23]
 INFO: [Synth 8-6157] synthesizing module 'stage3' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/stage3.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'stage3' (17#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/stage3.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/controller.v:190]
-INFO: [Synth 8-6155] done synthesizing module 'controller' (18#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/controller.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'stage3' (19#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/stage3.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/controller.v:192]
+INFO: [Synth 8-6155] done synthesizing module 'controller' (20#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/controller.v:23]
 INFO: [Synth 8-6157] synthesizing module 'DAC' [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/DAC.v:25]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/DAC.v:43]
-INFO: [Synth 8-6155] done synthesizing module 'DAC' (19#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/DAC.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'ACD' (20#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/ACD.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'DAC' (21#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/DAC.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'ACD' (22#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/ACD.v:23]
 WARNING: [Synth 8-350] instance 'acd_inst' of module 'ACD' requires 21 connections, but only 20 given [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/main.v:93]
-INFO: [Synth 8-6155] done synthesizing module 'boost' (21#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/main.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'boost' (23#1) [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/main.v:23]
 WARNING: [Synth 8-3917] design boost has port hi_muxsel driven by constant 0
-WARNING: [Synth 8-3331] design controller has unconnected port ADC_in[5]
-WARNING: [Synth 8-3331] design controller has unconnected port ADC_in[4]
 WARNING: [Synth 8-3331] design controller has unconnected port ADC_in[3]
 WARNING: [Synth 8-3331] design controller has unconnected port ADC_in[2]
 WARNING: [Synth 8-3331] design controller has unconnected port ADC_in[1]
 WARNING: [Synth 8-3331] design controller has unconnected port ADC_in[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 501.523 ; gain = 155.156
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 500.898 ; gain = 154.555
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -114,10 +118,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 501.523 ; gain = 155.156
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 500.898 ; gain = 154.555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 501.523 ; gain = 155.156
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 500.898 ; gain = 154.555
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -142,6 +146,8 @@ Parsing XDC File [c:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.sr
 Finished Parsing XDC File [c:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/ip/on_time_counter/on_time_counter/c_counter_binary_0_in_context.xdc] for cell 'cpu_inst/on_time_counter_inst'
 Parsing XDC File [c:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'inst0'
 Finished Parsing XDC File [c:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'inst0'
+Parsing XDC File [c:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/ip/step_counter/step_counter/step_counter_in_context.xdc] for cell 'acd_inst/stp/your_instance_name'
+Finished Parsing XDC File [c:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/ip/step_counter/step_counter/step_counter_in_context.xdc] for cell 'acd_inst/stp/your_instance_name'
 Parsing XDC File [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc]
 WARNING: [Vivado 12-584] No ports matched 'hi_in[0]'. [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc:21]
 WARNING: [Vivado 12-584] No ports matched 'hi_in[1]'. [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc:22]
@@ -196,6 +202,10 @@ WARNING: [Vivado 12-584] No ports matched 'hi_out[*]'. [C:/Users/Chris/Desktop/R
 WARNING: [Vivado 12-627] No clocks matched 'okHostClk'. [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc:71]
 INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc:71]
 WARNING: [Vivado 12-584] No ports matched 'hi_inout[*]'. [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc:71]
+WARNING: [Vivado 12-584] No ports matched 'test'. [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc:112]
+WARNING: [Vivado 12-584] No ports matched 'test'. [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc:113]
+WARNING: [Vivado 12-584] No ports matched 'cntr_load'. [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc:144]
+WARNING: [Vivado 12-584] No ports matched 'cntr_load'. [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc:145]
 Finished Parsing XDC File [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc]
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/boost_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/constrs_1/imports/ADC_Controller_DAC/xem7010.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/boost_propImpl.xdc].
@@ -207,23 +217,24 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 836.090 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 837.840 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'acd_inst/control/s0/add' at clock pin 'CLK' is different from the actual clock period '2.500', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'acd_inst/control/s1/mult' at clock pin 'CLK' is different from the actual clock period '2.500', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'acd_inst/control/s1/sub' at clock pin 'CLK' is different from the actual clock period '2.500', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'acd_inst/control/s2/add' at clock pin 'CLK' is different from the actual clock period '2.500', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'acd_inst/control/s2/mult' at clock pin 'CLK' is different from the actual clock period '2.500', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'acd_inst/control/s3/add' at clock pin 'CLK' is different from the actual clock period '2.500', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'acd_inst/stp/your_instance_name' at clock pin 'CLK' is different from the actual clock period '2.500', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'cpu_inst/on_time_counter_inst' at clock pin 'CLK' is different from the actual clock period '2.500', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 836.090 ; gain = 489.723
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 837.840 ; gain = 491.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a50tfgg484-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 836.090 ; gain = 489.723
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 837.840 ; gain = 491.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -236,8 +247,9 @@ Applied set_property DONT_TOUCH = true for acd_inst/control/s1/sub. (constraint 
 Applied set_property DONT_TOUCH = true for acd_inst/control/s0/add. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for cpu_inst/on_time_counter_inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for acd_inst/stp/your_instance_name. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 836.090 ; gain = 489.723
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 837.840 ; gain = 491.496
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "sw_on" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "FF_clear" won't be mapped to RAM because it is too sparse
@@ -245,8 +257,12 @@ INFO: [Synth 8-5546] ROM "FF_preset" won't be mapped to RAM because it is too sp
 INFO: [Synth 8-5546] ROM "ctrl_start" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "ctrl_start_reg" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "ctrl_ready_detect" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ADC'
-INFO: [Synth 8-5544] ROM "fdata" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "cntr_load" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ADC_v6'
+INFO: [Synth 8-5544] ROM "data" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'step_ctrl'
+INFO: [Synth 8-5544] ROM "n_SINIT" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "n_ki" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'controller'
 INFO: [Synth 8-5544] ROM "n_pipe_clk" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'DAC'
@@ -260,7 +276,19 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'DAC'
                  iSTATE3 |                              100 |                              100
                  iSTATE4 |                              101 |                              101
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ADC'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ADC_v6'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                          0000001 |                              000
+                 iSTATE0 |                          0000010 |                              001
+                 iSTATE1 |                          0000100 |                              010
+                 iSTATE2 |                          0001000 |                              011
+                 iSTATE3 |                          0010000 |                              100
+                 iSTATE4 |                          0100000 |                              101
+                 iSTATE5 |                          1000000 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'step_ctrl'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -279,7 +307,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'DAC'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 836.090 ; gain = 489.723
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 837.840 ; gain = 491.496
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -297,24 +325,24 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 4     
-	               18 Bit    Registers := 1     
-	               16 Bit    Registers := 6     
+	               32 Bit    Registers := 8     
+	               16 Bit    Registers := 8     
 	               10 Bit    Registers := 2     
 	                8 Bit    Registers := 1     
 	                6 Bit    Registers := 1     
 	                4 Bit    Registers := 2     
 	                3 Bit    Registers := 1     
 	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 37    
+	                1 Bit    Registers := 38    
 +---Muxes : 
+	   7 Input     32 Bit        Muxes := 2     
 	   2 Input     32 Bit        Muxes := 2     
-	   2 Input     18 Bit        Muxes := 2     
-	   2 Input     10 Bit        Muxes := 2     
-	   2 Input      9 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   7 Input     16 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 2     
 	   3 Input      8 Bit        Muxes := 1     
-	   2 Input      6 Bit        Muxes := 5     
+	   2 Input      6 Bit        Muxes := 7     
 	   8 Input      6 Bit        Muxes := 1     
 	   6 Input      6 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 1     
@@ -327,7 +355,8 @@ Detailed RTL Component Info :
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 13    
 	   8 Input      1 Bit        Muxes := 9     
-	   6 Input      1 Bit        Muxes := 6     
+	   6 Input      1 Bit        Muxes := 7     
+	   7 Input      1 Bit        Muxes := 3     
 	   3 Input      1 Bit        Muxes := 3     
 	   4 Input      1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
@@ -346,7 +375,7 @@ Detailed RTL Component Info :
 +---Registers : 
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
-Module cpu 
+Module cpu_v3 
 Detailed RTL Component Info : 
 +---Registers : 
 	               10 Bit    Registers := 1     
@@ -367,36 +396,44 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 5     
-Module ADC 
+Module ADC_v6 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      6 Bit       Adders := 1     
 +---Registers : 
-	               18 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
 	                6 Bit    Registers := 1     
 	                1 Bit    Registers := 5     
 +---Muxes : 
-	   2 Input     18 Bit        Muxes := 2     
-	   2 Input      6 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 4     
 	   6 Input      6 Bit        Muxes := 1     
 	   6 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   6 Input      1 Bit        Muxes := 6     
+	   6 Input      1 Bit        Muxes := 7     
+Module step_ctrl 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   7 Input     32 Bit        Muxes := 2     
+	   7 Input     16 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 3     
 Module controller 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      8 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 4     
+	               32 Bit    Registers := 6     
 	               16 Bit    Registers := 5     
 	                8 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 6     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 2     
-	   2 Input     10 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 2     
 	   3 Input      8 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 2     
@@ -444,15 +481,109 @@ Warning: Parallel synthesis criteria is not met
 WARNING: [Synth 8-6014] Unused sequential element acd_inst/adc/sync/sync_out_dcop2_reg was removed.  [C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.srcs/sources_1/new/sync_reg.v:41]
 WARNING: [Synth 8-3917] design boost has port hi_muxsel driven by constant 0
 WARNING: [Synth 8-3917] design boost has port cnv_n driven by constant 0
-INFO: [Synth 8-3886] merging instance 'acd_inst/control/ADC_reg[10]' (FDCE) to 'acd_inst/control/ADC_reg[11]'
-INFO: [Synth 8-3886] merging instance 'acd_inst/control/ADC_reg[11]' (FDCE) to 'acd_inst/control/ADC_reg[12]'
 INFO: [Synth 8-3886] merging instance 'acd_inst/control/ADC_reg[12]' (FDCE) to 'acd_inst/control/ADC_reg[13]'
 INFO: [Synth 8-3886] merging instance 'acd_inst/control/ADC_reg[13]' (FDCE) to 'acd_inst/control/ADC_reg[14]'
 INFO: [Synth 8-3886] merging instance 'acd_inst/control/ADC_reg[14]' (FDCE) to 'acd_inst/control/ADC_reg[15]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ADC_ref_reg[0]' (FDSE) to 'acd_inst/stp/ki_reg[3]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ADC_ref_reg[1]' (FDRE) to 'acd_inst/stp/ADC_ref_reg[3]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ADC_ref_reg[10]' (FDRE) to 'acd_inst/stp/ki_reg[8]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ADC_ref_reg[11]' (FDRE) to 'acd_inst/stp/ki_reg[8]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ADC_ref_reg[12]' (FDRE) to 'acd_inst/stp/ki_reg[8]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ADC_ref_reg[13]' (FDRE) to 'acd_inst/stp/ki_reg[8]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ADC_ref_reg[14]' (FDRE) to 'acd_inst/stp/ki_reg[8]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ADC_ref_reg[15]' (FDRE) to 'acd_inst/stp/ki_reg[8]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[2]' (FDRE) to 'acd_inst/stp/ki_reg[7]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[7]' (FDRE) to 'acd_inst/stp/kp_reg[12]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[8]' (FDRE) to 'acd_inst/stp/ki_reg[9]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[9]' (FDRE) to 'acd_inst/stp/ki_reg[10]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[10]' (FDRE) to 'acd_inst/stp/ki_reg[11]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[11]' (FDRE) to 'acd_inst/stp/ki_reg[12]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[12]' (FDRE) to 'acd_inst/stp/ki_reg[13]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[13]' (FDRE) to 'acd_inst/stp/ki_reg[14]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[14]' (FDRE) to 'acd_inst/stp/ki_reg[15]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[15]' (FDRE) to 'acd_inst/stp/ki_reg[16]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[16]' (FDRE) to 'acd_inst/stp/ki_reg[17]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[17]' (FDRE) to 'acd_inst/stp/ki_reg[18]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[18]' (FDRE) to 'acd_inst/stp/ki_reg[19]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[19]' (FDRE) to 'acd_inst/stp/ki_reg[20]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[20]' (FDRE) to 'acd_inst/stp/ki_reg[21]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[21]' (FDRE) to 'acd_inst/stp/ki_reg[22]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[22]' (FDRE) to 'acd_inst/stp/ki_reg[23]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[23]' (FDRE) to 'acd_inst/stp/ki_reg[24]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[24]' (FDRE) to 'acd_inst/stp/ki_reg[25]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[25]' (FDRE) to 'acd_inst/stp/ki_reg[26]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[26]' (FDRE) to 'acd_inst/stp/ki_reg[27]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[27]' (FDRE) to 'acd_inst/stp/ki_reg[28]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[28]' (FDRE) to 'acd_inst/stp/ki_reg[29]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[29]' (FDRE) to 'acd_inst/stp/ki_reg[30]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[30]' (FDRE) to 'acd_inst/stp/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/ki_reg[31]' (FDRE) to 'acd_inst/stp/kp_reg[0]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[2]' (FDC) to 'acd_inst/control/ki_reg[7]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[7]' (FDC) to 'acd_inst/control/kp_reg[12]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[8]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[9]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[10]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[11]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[12]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[13]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[14]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[15]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[16]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[17]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[18]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[19]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[20]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[21]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[22]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[23]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[24]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[25]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[26]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[27]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[28]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[29]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[30]' (FDC) to 'acd_inst/control/ki_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/ki_reg[31]' (FDC) to 'acd_inst/control/kp_reg[0]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[0]' (FDRE) to 'acd_inst/stp/kp_reg[1]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[1]' (FDRE) to 'acd_inst/stp/kp_reg[3]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[2]' (FDRE) to 'acd_inst/stp/kp_reg[10]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[3]' (FDRE) to 'acd_inst/stp/kp_reg[8]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[5]' (FDRE) to 'acd_inst/stp/kp_reg[11]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[6]' (FDRE) to 'acd_inst/stp/kp_reg[7]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[8]' (FDRE) to 'acd_inst/stp/kp_reg[13]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[13]' (FDRE) to 'acd_inst/stp/kp_reg[14]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[14]' (FDRE) to 'acd_inst/stp/kp_reg[15]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[15]' (FDRE) to 'acd_inst/stp/kp_reg[16]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[16]' (FDRE) to 'acd_inst/stp/kp_reg[17]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[17]' (FDRE) to 'acd_inst/stp/kp_reg[18]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[18]' (FDRE) to 'acd_inst/stp/kp_reg[19]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[19]' (FDRE) to 'acd_inst/stp/kp_reg[20]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[20]' (FDRE) to 'acd_inst/stp/kp_reg[21]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[21]' (FDRE) to 'acd_inst/stp/kp_reg[22]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[22]' (FDRE) to 'acd_inst/stp/kp_reg[23]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[23]' (FDRE) to 'acd_inst/stp/kp_reg[24]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[24]' (FDRE) to 'acd_inst/stp/kp_reg[25]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[25]' (FDRE) to 'acd_inst/stp/kp_reg[26]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[26]' (FDRE) to 'acd_inst/stp/kp_reg[27]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[27]' (FDRE) to 'acd_inst/stp/kp_reg[28]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[28]' (FDRE) to 'acd_inst/stp/kp_reg[29]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[29]' (FDRE) to 'acd_inst/stp/kp_reg[30]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/stp/kp_reg[30]' (FDRE) to 'acd_inst/stp/kp_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\acd_inst/stp/kp_reg[31] )
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/kp_reg[0]' (FDC) to 'acd_inst/control/kp_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/kp_reg[1]' (FDC) to 'acd_inst/control/kp_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/kp_reg[2]' (FDC) to 'acd_inst/control/kp_reg[10]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/kp_reg[3]' (FDC) to 'acd_inst/control/kp_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/kp_reg[5]' (FDC) to 'acd_inst/control/kp_reg[11]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/kp_reg[6]' (FDC) to 'acd_inst/control/kp_reg[7]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/kp_reg[8]' (FDC) to 'acd_inst/control/kp_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/kp_reg[13]' (FDC) to 'acd_inst/control/kp_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/kp_reg[14]' (FDC) to 'acd_inst/control/kp_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/kp_reg[15]' (FDC) to 'acd_inst/control/kp_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/kp_reg[16]' (FDC) to 'acd_inst/control/kp_reg[31]'
+INFO: [Synth 8-3886] merging instance 'acd_inst/control/kp_reg[17]' (FDC) to 'acd_inst/control/kp_reg[31]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu_inst/ctrl_start_reg_reg[0] )
-INFO: [Synth 8-3886] merging instance 'cpu_inst/state_reg[9]' (FDR) to 'cpu_inst/state_reg[6]'
-INFO: [Synth 8-3886] merging instance 'cpu_inst/state_reg[8]' (FDR) to 'cpu_inst/state_reg[6]'
-INFO: [Synth 8-3886] merging instance 'cpu_inst/state_reg[7]' (FDR) to 'cpu_inst/state_reg[6]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cpu_inst/state_reg[6] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\acd_inst/adc/tl_reg )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\acd_inst/adc/tp_reg )
@@ -466,14 +597,14 @@ WARNING: [Synth 8-3332] Sequential element (cpu_inst/exp_flg_reg) is unused and 
 WARNING: [Synth 8-3332] Sequential element (cpu_inst/ctrl_start_reg_reg[0]) is unused and will be removed from module boost.
 WARNING: [Synth 8-3332] Sequential element (acd_inst/adc/tp_reg) is unused and will be removed from module boost.
 WARNING: [Synth 8-3332] Sequential element (acd_inst/adc/tl_reg) is unused and will be removed from module boost.
-WARNING: [Synth 8-3332] Sequential element (acd_inst/adc_2_ctrl_reg[5]) is unused and will be removed from module boost.
-WARNING: [Synth 8-3332] Sequential element (acd_inst/adc_2_ctrl_reg[4]) is unused and will be removed from module boost.
 WARNING: [Synth 8-3332] Sequential element (acd_inst/adc_2_ctrl_reg[3]) is unused and will be removed from module boost.
 WARNING: [Synth 8-3332] Sequential element (acd_inst/adc_2_ctrl_reg[2]) is unused and will be removed from module boost.
 WARNING: [Synth 8-3332] Sequential element (acd_inst/adc_2_ctrl_reg[1]) is unused and will be removed from module boost.
 WARNING: [Synth 8-3332] Sequential element (acd_inst/adc_2_ctrl_reg[0]) is unused and will be removed from module boost.
+WARNING: [Synth 8-3332] Sequential element (acd_inst/stp/kp_reg[31]) is unused and will be removed from module boost.
+WARNING: [Synth 8-3332] Sequential element (acd_inst/control/kp_reg[31]) is unused and will be removed from module boost.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 836.090 ; gain = 489.723
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 837.840 ; gain = 491.496
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -489,13 +620,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'inst0/clk_out1' to pin 'i
 INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'inst0/clk_in1' to 'IBUFDS_inst0/O'
 INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:36 . Memory (MB): peak = 836.090 ; gain = 489.723
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 837.840 ; gain = 491.496
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 847.629 ; gain = 501.262
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 852.414 ; gain = 506.070
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -507,7 +638,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 849.547 ; gain = 503.180
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 854.047 ; gain = 507.703
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -531,7 +662,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 849.547 ; gain = 503.180
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 854.047 ; gain = 507.703
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -544,7 +675,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 849.547 ; gain = 503.180
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 854.047 ; gain = 507.703
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -556,39 +687,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 849.547 ; gain = 503.180
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 854.047 ; gain = 507.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 849.547 ; gain = 503.180
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 854.047 ; gain = 507.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 849.547 ; gain = 503.180
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 854.047 ; gain = 507.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 849.547 ; gain = 503.180
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP and Shift Register Reporting
----------------------------------------------------------------------------------
-
-Static Shift Register Report:
-+------------+---------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name | RTL Name                  | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+------------+---------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|boost       | acd_inst/adc/fdata_reg[9] | 4      | 2     | NO           | NO                 | YES               | 2      | 0       | 
-+------------+---------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP and Shift Register Reporting
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 854.047 ; gain = 507.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -603,7 +720,8 @@ Report BlackBoxes:
 |3     |c_addsub_0      |         1|
 |4     |mult_gen_0      |         2|
 |5     |c_addsub_1      |         2|
-|6     |on_time_counter |         1|
+|6     |step_counter    |         1|
+|7     |on_time_counter |         1|
 +------+----------------+----------+
 
 Report Cell Usage: 
@@ -618,22 +736,22 @@ Report Cell Usage:
 |6     |mult_gen_0      |     1|
 |7     |mult_gen_0__1   |     1|
 |8     |on_time_counter |     1|
-|9     |BUFG            |     1|
-|10    |CARRY4          |    28|
-|11    |LUT1            |     8|
-|12    |LUT2            |    55|
-|13    |LUT3            |    43|
-|14    |LUT4            |    27|
-|15    |LUT5            |    24|
-|16    |LUT6            |    45|
-|17    |SRL16E          |     2|
-|18    |FDCE            |   228|
-|19    |FDPE            |     1|
-|20    |FDRE            |   155|
-|21    |FDSE            |     2|
+|9     |step_counter    |     1|
+|10    |BUFG            |     1|
+|11    |CARRY4          |    28|
+|12    |LUT1            |     7|
+|13    |LUT2            |    61|
+|14    |LUT3            |    61|
+|15    |LUT4            |    23|
+|16    |LUT5            |    21|
+|17    |LUT6            |    55|
+|18    |FDCE            |   238|
+|19    |FDPE            |     3|
+|20    |FDRE            |   175|
+|21    |FDSE            |     9|
 |22    |IBUF            |     5|
 |23    |IBUFDS          |     4|
-|24    |OBUF            |    23|
+|24    |OBUF            |    24|
 |25    |OBUFDS          |     1|
 +------+----------------+------+
 
@@ -641,28 +759,29 @@ Report Instance Areas:
 +------+-----------------+-----------+------+
 |      |Instance         |Module     |Cells |
 +------+-----------------+-----------+------+
-|1     |top              |           |   823|
-|2     |  acd_inst       |ACD        |   605|
-|3     |    adc          |ADC        |    67|
+|1     |top              |           |   903|
+|2     |  acd_inst       |ACD        |   685|
+|3     |    adc          |ADC_v6     |    72|
 |4     |      sync       |sync_reg   |    13|
-|5     |    control      |controller |   489|
+|5     |    control      |controller |   502|
 |6     |      s0         |stage0     |    16|
 |7     |      s1         |stage1     |    48|
 |8     |      s2         |stage2     |    64|
 |9     |      s3         |stage3     |    72|
 |10    |    dac          |DAC        |    21|
-|11    |  cpu_inst       |cpu        |    50|
-|12    |  debounce_inst1 |debounce   |    44|
-|13    |  debounce_inst2 |debounce_0 |    45|
-|14    |  debounce_inst3 |debounce_1 |    45|
-|15    |  sync_inst0     |sync_dout  |     3|
+|11    |    stp          |step_ctrl  |    60|
+|12    |  cpu_inst       |cpu_v3     |    47|
+|13    |  debounce_inst1 |debounce   |    45|
+|14    |  debounce_inst2 |debounce_0 |    46|
+|15    |  debounce_inst3 |debounce_1 |    45|
+|16    |  sync_inst0     |sync_dout  |     3|
 +------+-----------------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 849.547 ; gain = 503.180
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 854.047 ; gain = 507.703
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 17 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:28 . Memory (MB): peak = 849.547 ; gain = 168.613
-Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 849.547 ; gain = 503.180
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 854.047 ; gain = 170.762
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 854.047 ; gain = 507.703
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 38 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -672,10 +791,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-102 Infos, 81 Warnings, 0 Critical Warnings and 0 Errors encountered.
+206 Infos, 85 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 849.547 ; gain = 514.652
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 854.047 ; gain = 519.176
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Chris/Desktop/Research/Boost_Control/Boost_Control.runs/synth_1/boost.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file boost_utilization_synth.rpt -pb boost_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.133 . Memory (MB): peak = 849.547 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Jul 20 09:47:46 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 854.047 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 25 21:40:35 2018...
